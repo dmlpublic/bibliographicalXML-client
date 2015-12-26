@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="../schemas/book.xsd"
+  xmlns:c="../schemas/book.xsd">
+
+  <xs:include schemaLocation="../../bibXML-service/schemas/collation.1.0.xsd/"/>
+  
+  <xs:element name="entry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:todo" minOccurs="0"/>
+        <xs:element ref="c:comment" minOccurs="0"/>
+        <xs:element ref="c:fileDesc"/>
+        <xs:element ref="c:bookDesc"/>
+        <xs:element ref="c:text"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="fileDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:title"/>
+        <xs:element ref="c:respStmt"/>
+        <xs:element ref="c:header"/>
+        <xs:element ref="c:footer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bookDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:bookKeys"/>
+        <xs:element ref="c:respStmt"/>
+        <xs:element ref="c:periodicalReferences" minOccurs="0"/>
+        <xs:element ref="c:prices" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="c:listBibl" minOccurs="0"/>
+        <xs:element ref="c:holdings"/>
+        <xs:element ref="c:notes" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="text">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:collation"/>
+        <xs:element ref="c:sections"/>
+        <xs:element ref="c:plates" minOccurs="0"/>
+        <xs:element ref="c:catchwords" minOccurs="0"/>
+        <xs:element ref="c:pressFigures" minOccurs="0"/>
+        <xs:element ref="c:imprimatur" minOccurs="0"/>
+        <xs:element ref="c:colophon" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bookKeys">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:idno"/>
+        <xs:element ref="c:fn"/>
+        <xs:element ref="c:shortTitle"/>
+        <xs:element ref="c:shortImprint" minOccurs="0"/>
+        <xs:element ref="c:statedEdition" minOccurs="0"/>
+        <xs:element ref="c:description" minOccurs="0"/>
+        <xs:element ref="c:pubYear"/>
+        <xs:element ref="c:pubDate"/>
+        <xs:element ref="c:evidence"/>
+        <xs:element ref="c:edition"/>
+        <xs:element ref="c:issue"/>
+        <xs:element ref="c:categoryID"/>
+        <xs:element ref="c:workID"/>
+        <xs:element ref="c:subWorkID"/>
+        <xs:element ref="c:copiesPrinted" minOccurs="0"/>
+        <xs:element ref="c:textLang"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="periodicalReferences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:periodicalReference" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="periodicalReference" type="c:periodicalItem"/>
+
+  <xs:complexType name="periodicalItem">
+    <xs:sequence>
+      <xs:element ref="c:publication"/>
+      <xs:element ref="c:pubDate"/>
+      <xs:element ref="c:notes" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="c:attr_periodicalType"/>
+  </xs:complexType>
+
+  <xs:element name="prices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:price" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="price">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:priceComponent" maxOccurs="unbounded"/>
+        <xs:element ref="c:note" minOccurs="0"/>
+        <xs:element ref="c:evidence" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="priceComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:amount"/>
+        <xs:element ref="c:unit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="listBibl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:bibl" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bibl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:reference"/>
+        <xs:element ref="c:idno"/>
+        <xs:element ref="c:notes" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="holdings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:holding" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="holding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:holder"/>
+        <xs:element ref="c:shelfmark" minOccurs="0"/>
+        <xs:element ref="c:surrogate" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="c:copies" minOccurs="0"/>
+        <!-- Where isCollection="true" idno/sequence note shelfmark and position in collection -->
+        <xs:element ref="c:idno" minOccurs="0"/>
+        <xs:element ref="c:sequence" minOccurs="0"/>
+        <xs:element ref="c:notes" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="c:attr_isSeen"/>
+      <xs:attributeGroup ref="c:attr_isCollection"/>
+    </xs:complexType>
+  </xs:element>
+
+<xs:attributeGroup name="attr_isSeen">
+  <xs:attribute name="isSeen" use="required"/>
+</xs:attributeGroup>
+  
+  <xs:attributeGroup name="attr_isCollection">
+    <xs:attribute name="isCollection" use="optional" default="false"/>
+  </xs:attributeGroup>
+
+  <xs:element name="sections">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:section" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="section">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:titlePage" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="c:content" minOccurs="0"/>
+        <xs:element ref="c:RT" minOccurs="0"/>
+        <xs:element ref="c:gamesCovered" minOccurs="0"/>
+        <xs:element ref="c:subject" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="c:id"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="titlePage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:titlePart" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="c:attr_titleType"/>
+      <xs:attribute ref="c:sectionID"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attributeGroup name="attr_titleType">
+    <xs:attribute name="titleType" use="required"/>
+  </xs:attributeGroup>
+  
+  <xs:element name="content">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:sigFrom"/>
+        <xs:element ref="c:pageFrom" minOccurs="0"/>
+        <xs:element ref="c:sigTo" minOccurs="0"/>
+        <xs:element ref="c:pageTo" minOccurs="0"/>
+        <xs:element ref="c:contentPart" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="c:isOn" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attribute name="isOn" type="xs:boolean" default="true"/>
+
+  <xs:element name="RT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:sigFrom"/>
+        <xs:element ref="c:pageFrom" minOccurs="0"/>
+        <xs:element ref="c:sigTo" minOccurs="0"/>
+        <xs:element ref="c:pageTo" minOccurs="0"/>
+        <xs:element ref="c:addedRange" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="c:RTPart" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="c:isOn" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="addedRange">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation> This is used only for an anomolous running titles that extends to
+          multiple ranges. The first range is noted as part of RT with isOn="true". Subsequent
+          ranges noted here. </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="c:sigFrom"/>
+        <xs:element ref="c:pageFrom" minOccurs="0"/>
+        <xs:element ref="c:sigTo" minOccurs="0"/>
+        <xs:element ref="c:pageTo" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="gamesCovered">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:game" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="respStmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:respItem" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="respItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:respGroup" minOccurs="0" maxOccurs="1"/>
+        <xs:choice>
+          <xs:element ref="c:persName"/>
+          <xs:element ref="c:orgName"/>
+        </xs:choice>
+        <xs:element ref="c:evidence" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="c:share" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="c:attr_respType"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attributeGroup name="attr_respType">
+    <xs:attribute name="respType" use="required"/>
+  </xs:attributeGroup>
+
+  <xs:element name="header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dateUpdate" type="xs:date"/>
+        <xs:element name="dateProof" type="xs:date" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="footer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:home"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="persName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:forename"/>
+        <xs:element ref="c:surname"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="orgName" type="xs:string"/>
+
+  <xs:element name="reference">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Depaulis"/>
+        <xs:enumeration value="Donovan and Murdoch"/>
+        <xs:enumeration value="ESTC"/>
+        <xs:enumeration value="Fleeman"/>
+        <xs:enumeration value="Horr"/>
+        <xs:enumeration value="Jessel"/>
+        <xs:enumeration value="Lensi"/>
+        <xs:enumeration value="Marshall"/>
+        <xs:enumeration value="Rather"/>
+        <xs:enumeration value="Todhunter"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="subject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:subject1"/>
+        <xs:element ref="c:subject2" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="plates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:plate" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="plate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:plateRelation"/>
+        <xs:group ref="c:sigRefGroup"/>
+        <xs:group ref="c:pageRefGroup" minOccurs="0"/>
+        <xs:element ref="c:plateType"/>
+        <xs:element ref="c:notes" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="c:plateLocation" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="plateRelation">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="after"/>
+        <xs:enumeration value="before"/>
+        <xs:enumeration value="on"/>
+        <xs:enumeration value="opposite"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="plateType">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="copperplate"/>
+        <xs:enumeration value="engraving"/>
+        <xs:enumeration value="woodblock"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:attribute name="plateLocation">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Frontispiece"/>
+        <xs:enumeration value="Title"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:element name="catchwords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:catchword" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="catchword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="c:sigRefGroup"/>
+        <xs:group ref="c:pageRefGroup" minOccurs="0"/>
+        <xs:element ref="c:cwFoot" maxOccurs="unbounded"/>
+        <xs:element ref="c:cwHead" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pressFigures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:pressFigure" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pressFigure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="c:sigRefGroup"/>
+        <xs:group ref="c:pageRefGroup"/>
+        <xs:element ref="c:forme"/>
+        <xs:element ref="c:mark"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="forme">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="i"/>
+        <xs:enumeration value="o"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="mark">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="5"/>
+        <xs:enumeration value="6"/>
+        <xs:enumeration value="7"/>
+        <xs:enumeration value="8"/>
+        <xs:enumeration value="9"/>
+        <xs:enumeration value="10"/>
+        <xs:enumeration value="11"/>
+        <xs:enumeration value="*"/>
+        <xs:enumeration value="†"/>
+        <xs:enumeration value="‡"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="imprimatur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:notes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="colophon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:notes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Title Statement -->
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="publicationStmt" type="xs:string"/>
+
+  <xs:element name="sigFrom">
+    <xs:complexType>
+      <xs:group ref="c:sigRefGroup"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sigTo">
+    <xs:complexType>
+      <xs:group ref="c:sigRefGroup"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pageFrom">
+    <xs:complexType>
+      <xs:group ref="c:pageRefGroup"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pageTo">
+    <xs:complexType>
+      <xs:group ref="c:pageRefGroup"/>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <xs:element name="idno">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <!--attribute used for rare case in which a book was part of a collection, but now has a different shelfmark -->
+          <!--idno will have the name of the collection eg Cogan.4 and shelfmark will be the original shelfmark -->
+          <!-- See  Jessel f.580 -->
+          <xs:attribute name="shelfmark" type="xs:string" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="shortTitle" type="xs:string"/>
+  <xs:element name="shortImprint" type="xs:string"/>
+  <xs:element name="statedEdition" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="year" type="xs:gYear"/>
+  <xs:element name="edition" type="xs:integer"/>
+  <xs:element name="issue" type="xs:integer"/>
+  <xs:element name="copiesPrinted" type="xs:integer"/>
+
+  <!-- notes -->
+  <xs:element name="evidence">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="advertisement"/>
+        <xs:enumeration value="Cogan v Chapelle"/>
+        <xs:enumeration value="colophon"/>
+        <xs:enumeration value="copyright"/>
+        <xs:enumeration value="cover"/>
+        <xs:enumeration value="half title"/>
+        <xs:enumeration value="imprimatur"/>
+        <xs:enumeration value="included work"/>
+        <xs:enumeration value="inferred"/>
+        <xs:enumeration value="label"/>
+        <xs:enumeration value="Longman Archives"/>
+        <xs:enumeration value="notice"/>
+        <xs:enumeration value="ornaments"/>
+        <xs:enumeration value="review"/>
+        <xs:enumeration value="slip case"/>
+        <xs:enumeration value="Stationers' Register"/>
+        <xs:enumeration value="title"/>
+        <xs:enumeration value="wrapper"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- index information -->
+  <xs:element name="game">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="All Fours"/>
+        <xs:enumeration value="Archery"/>
+        <xs:enumeration value="Backgammon"/>
+        <xs:enumeration value="Billiards"/>
+        <xs:enumeration value="Boston"/>
+        <xs:enumeration value="Brag"/>
+        <xs:enumeration value="Cassino"/>
+        <xs:enumeration value="Catch the Ten"/>
+        <xs:enumeration value="Commerce"/>
+        <xs:enumeration value="Connexions"/>
+        <xs:enumeration value="Cribbage"/>
+        <xs:enumeration value="Chess"/>
+        <xs:enumeration value="Comet"/>
+        <xs:enumeration value="Commit"/>
+        <xs:enumeration value="Cricket"/>
+        <xs:enumeration value="Dez Anglois"/>
+        <xs:enumeration value="Dummy Whist"/>
+        <xs:enumeration value="Domino"/>
+        <xs:enumeration value="Draughts"/>
+        <xs:enumeration value="Dutch Pins"/>
+        <xs:enumeration value="E O"/>
+        <xs:enumeration value="Earl of Coventry"/>
+        <xs:enumeration value="Ecarté"/>
+        <xs:enumeration value="Faro"/>
+        <xs:enumeration value="Five and Ten"/>
+        <xs:enumeration value="French Lottery"/>
+        <xs:enumeration value="Game Cocks"/>
+        <xs:enumeration value="Golf"/>
+        <xs:enumeration value="Hazard"/>
+        <xs:enumeration value="Horse Racing"/>
+        <xs:enumeration value="Lansquenet"/>
+        <xs:enumeration value="Lift Smoke"/>
+        <xs:enumeration value="Loo"/>
+        <xs:enumeration value="Loto"/>
+        <xs:enumeration value="Lottery"/>
+        <xs:enumeration value="Matrimony"/>
+        <xs:enumeration value="Mediateur"/>
+        <xs:enumeration value="Piquet"/>
+        <xs:enumeration value="Polish Draughts"/>
+        <xs:enumeration value="Pope Joan"/>
+        <xs:enumeration value="Put"/>
+        <xs:enumeration value="Quadrille"/>
+        <xs:enumeration value="Quinze"/>
+        <xs:enumeration value="Raffle"/>
+        <xs:enumeration value="Rouge et Noir"/>
+        <xs:enumeration value="Reversis"/>
+        <xs:enumeration value="Roulette"/>
+        <xs:enumeration value="Skittles"/>
+        <xs:enumeration value="Snip Snap Snorem"/>
+        <xs:enumeration value="Short Whist"/>
+        <xs:enumeration value="Speculation"/>
+        <xs:enumeration value="Tennis"/>
+        <xs:enumeration value="Thirty One"/>
+        <xs:enumeration value="Tressette"/>
+        <xs:enumeration value="Vingt-Un"/>
+        <xs:enumeration value="Whist"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="subject1" type="xs:string"/>
+  <xs:element name="subject2" type="xs:string"/>
+
+  <!-- names -->
+  <xs:element name="forename" type="xs:string"/>
+  <xs:element name="surname" type="xs:string"/>
+
+  <!-- measurement -->
+  <xs:element name="share" type="xs:integer"/>
+
+  <xs:element name="amount">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="5"/>
+        <xs:enumeration value="6"/>
+        <xs:enumeration value="6.5"/>
+        <xs:enumeration value="7"/>
+        <xs:enumeration value="8"/>
+        <xs:enumeration value="8.5"/>
+        <xs:enumeration value="9"/>
+        <xs:enumeration value="10"/>
+        <xs:enumeration value="50"/>
+        <xs:enumeration value="1.50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="unit">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="gn."/>
+        <xs:enumeration value="s."/>
+        <xs:enumeration value="d."/>
+        <xs:enumeration value="$"/>
+        <xs:enumeration value="¢"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- collation -->
+
+  <!-- holdings -->
+  <!-- holder can have numbers, letters, minus sign (escaped here with backslash) and forward slash -->
+  <xs:element name="holder">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9a-zA-Z\-/*]{1,10}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="shelfmark" type="xs:string"/>
+
+  <xs:element name="surrogate">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="c:surrogateType">
+          <xs:attributeGroup ref="c:attr_url"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="copies" type="xs:positiveInteger"/>
+  <xs:element name="sequence" type="xs:positiveInteger"/>
+
+  <!-- advertising and reviews -->
+  <xs:element name="publication" type="xs:string"/>
+
+  <xs:element name="pubDate">
+    <xs:simpleType>
+      <xs:union memberTypes="xs:date xs:gYear xs:gYearMonth"/>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="pubYear" type="xs:gYear"/>
+
+  <xs:element name="categoryID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[a-c]"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="workID">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="subWorkID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[1-6]"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- elements using QFT -->
+  <xs:element name="titlePart" type="c:qft"/>
+  <xs:element name="contentPart" type="c:qft"/>
+  <xs:element name="RTPart" type="c:qft"/>
+  <xs:element name="cwFoot" type="c:qft"/>
+  <xs:element name="cwHead" type="c:qft"/>
+  
+  <xs:attribute name="url" type="xs:string"/>
+
+  <xs:element name="textLang" default="en">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="de"/>
+        <xs:enumeration value="en"/>
+        <xs:enumeration value="fr"/>
+        <xs:enumeration value="pt"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:attribute name="rend" default="roman">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="blackletter"/>
+        <xs:enumeration value="break"/>
+        <xs:enumeration value="italic"/>
+        <xs:enumeration value="italicred"/>
+        <xs:enumeration value="italsmallcap"/>
+        <xs:enumeration value="paragraph"/>
+        <xs:enumeration value="red"/>
+        <xs:enumeration value="roman"/>
+        <xs:enumeration value="smallcap"/>
+        <xs:enumeration value="smallcapred"/>
+        <xs:enumeration value="super"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  
+  <xs:element name="respGroup">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute ref="c:seq" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attribute name="respType">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="author"/>
+        <xs:enumeration value="distributor"/>
+        <xs:enumeration value="dedicatee"/>
+        <xs:enumeration value="editor"/>
+        <xs:enumeration value="publisher"/>
+        <xs:enumeration value="printer"/>
+        <xs:enumeration value="translator"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <xs:simpleType name="surrogateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Early American Imprints"/>
+      <xs:enumeration value="ECCO"/>
+      <xs:enumeration value="Evans"/>
+      <xs:enumeration value="Google"/>
+      <xs:enumeration value="Internet Archive"/>
+      <xs:enumeration value="John Johnson Collection"/>
+      <xs:enumeration value="Shaw"/>
+      <xs:enumeration value="Stiftung Tierärztlichen Hochschule"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:attribute name="titleType" default="title">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="cancelandum"/>
+        <xs:enumeration value="halfTitle"/>
+        <xs:enumeration value="section"/>
+        <xs:enumeration value="title"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <xs:attributeGroup name="attr_periodicalType">
+  <xs:attribute name="periodicalType">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="advertisement"/>
+        <xs:enumeration value="review"/>
+        <xs:enumeration value="notice"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  </xs:attributeGroup>
+  <xs:element name="todo" type="xs:string"/>
+  <xs:element name="comment" type="xs:string"/>
+  <xs:element name="fn" type="xs:string"/>
+  <xs:element name="home" type="xs:string" default="../index.xml"/>
+
+  <xs:attribute name="signed" type="xs:boolean"/>
+  <xs:attribute name="numbered" type="xs:boolean"/>
+  <xs:attribute name="disjunct">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>should be used only for a two-leaf signature that is not a
+          fold</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="range" type="xs:boolean"/>
+  <xs:attribute name="isSeen" type="xs:boolean"/>
+  <xs:attribute name="isCollection" type="xs:boolean"/>
+  <xs:attribute name="id" type="xs:ID"/>
+  <xs:attribute name="sectionID" type="xs:string"/>
+  <xs:attribute name="seq" type="xs:positiveInteger"/>
+
+</xs:schema>
