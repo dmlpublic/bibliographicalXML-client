@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="../schemas/book.xsd"
-  xmlns:c="../schemas/book.xsd">
+  targetNamespace="https://github.com/cacology/bibliographicalXML"
+  xmlns:c="https://github.com/cacology/bibliographicalXML">
 
   <xs:include schemaLocation="../../bibXML-service/schemas/collation.1.0.xsd/"/>
   

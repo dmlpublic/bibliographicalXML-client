@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="xsl/book.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="../xsl/book.xsl"?>
+
 <entry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="../schemas/book.xsd ../schemas/book.xsd" xmlns="../schemas/book.xsd">
+	xsi:schemaLocation="../schemas/book.xsd ../schemas/book.xsd" xmlns="https://github.com/cacology/bibliographicalXML">
+
 	<fileDesc>
 		<title>Whist.2</title>
 		<respStmt>
