@@ -221,9 +221,13 @@
         <xs:element ref="c:pageTo" minOccurs="0"/>
         <xs:element ref="c:contentPart" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attribute ref="c:isOn" use="optional"/>
+      <xs:attributeGroup ref="c:attr_isOn"/>
     </xs:complexType>
   </xs:element>
+
+<xs:attributeGroup name="attr_isOn">
+  <xs:attribute name="isOn" use="optional"/>
+</xs:attributeGroup>
 
   <xs:attribute name="isOn" type="xs:boolean" default="true"/>
 

@@ -2,7 +2,7 @@
 import sys
 sys.path.insert(0, '..\\..\\bibXML-service\\scripts')
 
-import checkSignatures
+import checkCollation
 from checkBibl import checkBibl
 from utilities import getXMLfiles
 
@@ -12,7 +12,7 @@ files = getXMLfiles()
 
 for file in files:
 	print (file)
-	checkSignatures.checkCollation(file)
+	checkCollation.checkCollation(file)
 	checkBibl(file)
 
 print ("done")

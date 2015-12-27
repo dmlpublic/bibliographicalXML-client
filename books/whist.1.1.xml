@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="xsl/book.xsl"?>
+<entry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="../schemas/book.xsd ../schemas/book.xsd" xmlns="../schemas/book.xsd">
+	<fileDesc>
+		<title>Whist.1.1</title>
+		<respStmt>
+			<respItem respType="author">
+				<persName>
+					<forename>David</forename>
+					<surname>Levy</surname>
+				</persName>
+			</respItem>
+		</respStmt>
+		<header>
+			<dateUpdate>2014-10-05</dateUpdate>
+		</header>
+		<footer>
+			<home>../index.xml</home>
+		</footer>
+	</fileDesc>
+	<bookDesc>
+		<bookKeys>
+			<idno>Whist.1.1</idno>
+			<fn>books/whist.1.1.xml</fn>
+			<shortTitle>A Short Treatise on the Game of Whist</shortTitle>
+			<shortImprint>printed by John Watts for the Author</shortImprint>
+			<description>first London edition</description>
+			<pubYear>1742</pubYear>
+			<pubDate>1742-11-17</pubDate>
+			<evidence>Stationers' Register</evidence>
+			<edition>1</edition>
+			<issue>1</issue>
+			<categoryID>a</categoryID>
+			<workID>1</workID>
+			<subWorkID>1</subWorkID>
+			<textLang>en</textLang>
+		</bookKeys>
+		<respStmt>
+			<respItem respType="author">
+				<persName>
+					<forename>Edmond</forename>
+					<surname>Hoyle</surname>
+				</persName>
+			</respItem>
+			<respItem respType="publisher">
+				<persName>
+					<forename>Edmond</forename>
+					<surname>Hoyle</surname>
+				</persName>
+				<share>100</share>
+			</respItem>
+			<respItem respType="printer">
+				<persName>
+					<forename>John</forename>
+					<surname>Watts</surname>
+				</persName>
+			</respItem>
+		</respStmt>
+		<prices>
+			<price>
+				<priceComponent>
+					<amount>1</amount>
+					<unit>gn.</unit>
+				</priceComponent>
+				<evidence>inferred</evidence>
+			</price>
+		</prices>
+		<listBibl>
+			<bibl>
+				<reference>ESTC</reference>
+				<idno>T203439</idno>
+			</bibl>
+			<bibl>
+				<reference>Jessel</reference>
+				<idno>769</idno>
+			</bibl>
+			<bibl>
+				<reference>Marshall</reference>
+				<idno>NQ 7.08.003</idno>
+			</bibl>
+			<bibl>
+				<reference>Marshall</reference>
+				<idno>NQ 7.08.083</idno>
+			</bibl>
+			<bibl>
+				<reference>Rather</reference>
+				<idno>1</idno>
+			</bibl>
+		</listBibl>
+		<holdings>
+			<holding isSeen="true">
+				<holder>O</holder>
+				<shelfmark>Vet. A4 f.285</shelfmark>
+				<surrogate>ECCO</surrogate>
+			</holding>
+			<holding isSeen="true">
+				<holder>NNPM</holder>
+				<shelfmark>E3 092 D 079483</shelfmark>
+			</holding>
+			<holding isSeen="true">
+				<holder>Levy</holder>
+			</holding>
+			<holding isSeen="false">
+				<holder>ABu</holder>
+				<shelfmark>In SB 7951 Hoy</shelfmark>
+			</holding>
+		</holdings>
+		<notes>
+			<note>1742-11-17: Entered at Stationers' Hall in the name of Edmond Hoyle.</note>
+		</notes>
+	</bookDesc>
+	<text>
+		<collation>
+			<format>12</format>
+			<collationFormula>
+				<gatherings>
+					<gatheringRange signed="true">
+						<sigStart>A</sigStart>
+						<leaves>4</leaves>
+					</gatheringRange>
+					<gatheringRange signed="true">
+						<sigStart>B</sigStart>
+						<sigEnd>D</sigEnd>
+						<leaves>12</leaves>
+					</gatheringRange>
+					<gatheringRange signed="true">
+						<sigStart>E</sigStart>
+						<leaves>8</leaves>
+					</gatheringRange>
+				</gatherings>
+				<signatureLeaves>$1-5</signatureLeaves>
+				<anomSignatures>
+					<anomSignature>
+						<anomType>-</anomType>
+						<sigRef>A3</sigRef>
+					</anomSignature>
+					<anomSignature>
+						<anomType>-</anomType>
+						<sigRef>A4</sigRef>
+					</anomSignature>
+					<anomSignature>
+						<anomType>-</anomType>
+						<sigRef>E5</sigRef>
+					</anomSignature>
+				</anomSignatures>
+			</collationFormula>
+			<totalLeaves>48</totalLeaves>
+			<pagination>
+				<pageRanges>
+					<pageRange numbered="false" range="true">
+						<start>8</start>
+					</pageRange>
+					<pageRange numbered="false">
+						<start>1</start>
+					</pageRange>
+					<pageRange numbered="true">
+						<start>2</start>
+						<end>86</end>
+					</pageRange>
+					<pageRange numbered="false">
+						<start>87</start>
+						<end>88</end>
+					</pageRange>
+				</pageRanges>
+			</pagination>
+			<totalPages>96</totalPages>
+		</collation>
+		<sections>
+			<section>
+				<titlePage titleType="title">
+					<titlePart rend="roman">A SHORT | TREATISE | On the GAME of | WHIST. |
+						CONTAINING | The LAWS of the GAME: | AND ALSO | Some </titlePart>
+					<titlePart rend="smallcap">Rules, </titlePart>
+					<titlePart rend="roman">whereby a Beginner may, | with due Attention to them,
+						attain to | the Playing it well. | </titlePart>
+					<titlePart rend="smallcap">Calculations </titlePart>
+					<titlePart rend="roman">for thoſe who will Bet the | Odds on any Point of the
+						Score of the | Game then playing and depending. | </titlePart>
+					<titlePart rend="smallcap">Cases </titlePart>
+					<titlePart rend="roman">ſtated, to ſhew what may be effected | by a very good
+						Player in Critical Parts | of the Game. | </titlePart>
+					<titlePart rend="smallcap">References </titlePart>
+					<titlePart rend="roman">to </titlePart>
+					<titlePart rend="smallcap">Cases, </titlePart>
+					<titlePart rend="italic">viz. </titlePart>
+					<titlePart rend="roman">at the | End of the Rule you are directed how | to find
+						them. | </titlePart>
+					<titlePart rend="smallcap">Calculations, </titlePart>
+					<titlePart rend="roman">directing with moral Certainty, | how to play well any
+						Hand or Game, by | ſhewing the Chances of your Partner’s | having 1, 2, or 3
+						Certain Cards. | With Variety of </titlePart>
+					<titlePart rend="smallcap">Cases </titlePart>
+					<titlePart rend="roman">added in the Appendix. | [rule] | By </titlePart>
+					<titlePart rend="smallcap">Edmund Hoyle, </titlePart>
+					<titlePart rend="italic">Gent. </titlePart>
+					<titlePart rend="roman">| [double rule] | </titlePart>
+					<titlePart rend="roman">LONDON: | Printed by </titlePart>
+					<titlePart rend="smallcap">John Watts </titlePart>
+					<titlePart rend="roman">for the </titlePart>
+					<titlePart rend="smallcap">Author. </titlePart>
+					<titlePart rend="roman">| M DCC XLII.</titlePart>
+				</titlePage>
+				<content>
+					<sigFrom>
+						<sigRef>A1r</sigRef>
+					</sigFrom>
+					<contentPart>title</contentPart>
+				</content>
+			</section>
+			<section>
+				<content>
+					<sigFrom>
+						<sigRef>A1v</sigRef>
+					</sigFrom>
+					<contentPart rend="roman">blank</contentPart>
+				</content>
+			</section>
+			<section>
+				<content>
+					<sigFrom>
+						<sigRef>A2r</sigRef>
+					</sigFrom>
+					<sigTo>
+						<sigRef>A4r</sigRef>
+					</sigTo>
+					<contentPart rend="roman">‘[headpiece] | THE | CONTENTS | [...]’</contentPart>
+				</content>
+				<RT>
+					<sigFrom>
+						<sigRef>A2r</sigRef>
+					</sigFrom>
+					<sigTo>
+						<sigRef>A4r</sigRef>
+					</sigTo>
+					<RTPart rend="roman">‘The CONTENTS.’</RTPart>
+				</RT>
+			</section>
+			<section>
+				<content>
+					<sigFrom>
+						<sigRef>A4v</sigRef>
+					</sigFrom>
+					<contentPart rend="roman">blank</contentPart>
+				</content>
+			</section>
+			<section>
+				<content>
+					<sigFrom>
+						<sigRef>B1r</sigRef>
+					</sigFrom>
+					<pageFrom>
+						<pageRef>1</pageRef>
+					</pageFrom>
+					<sigTo>
+						<sigRef>C11v</sigRef>
+					</sigTo>
+					<pageTo>
+						<pageRef>46</pageRef>
+					</pageTo>
+					<contentPart rend="roman">‘[headpiece] | A SHORT | TREATISE | On the GAME of
+						WHIST. | [...]’</contentPart>
+				</content>
+				<RT>
+					<sigFrom>
+						<sigRef>B1v</sigRef>
+					</sigFrom>
+					<pageFrom>
+						<pageRef>2</pageRef>
+					</pageFrom>
+					<sigTo>
+						<sigRef>E7r</sigRef>
+					</sigTo>
+					<pageTo>
+						<pageRef>85</pageRef>
+					</pageTo>
+					<RTPart rend="italic">‘A Short </RTPart>
+					<RTPart rend="smallcap">Treatise </RTPart>
+					<RTPart rend="italic">on | the </RTPart>
+					<RTPart rend="smallcap">Game </RTPart>
+					<RTPart rend="italic">of </RTPart>
+					<RTPart rend="smallcap">Whist’</RTPart>
+				</RT>
+				<gamesCovered>
+					<game>Whist</game>
+				</gamesCovered>
+			</section>
+			<section>
+				<content isOn="true">
+					<sigFrom>
+						<sigRef>C11v</sigRef>
+					</sigFrom>
+					<pageFrom>
+						<pageRef>46</pageRef>
+					</pageFrom>
+					<contentPart>‘[...] | [in square brackets] </contentPart>
+					<contentPart rend="italic">What follows in this </contentPart>
+					<contentPart rend="smallcap">Treatise | </contentPart>
+					<contentPart rend="italic">is the Addition promiſed. </contentPart>
+					<contentPart rend="roman">| [tailpiece]’</contentPart>
+				</content>
+			</section>
+			<section>
+				<content>
+					<sigFrom>
+						<sigRef>C12r</sigRef>
+					</sigFrom>
+					<pageFrom>
+						<pageRef>47</pageRef>
+					</pageFrom>
+					<sigTo>
+						<sigRef>E7v</sigRef>
+					</sigTo>
+					<pageTo>
+						<pageRef>86</pageRef>
+					</pageTo>
+					<contentPart rend="roman">chapters IX-XIV</contentPart>
+				</content>
+				<RT>
+					<sigFrom>
+						<sigRef>E7v</sigRef>
+					</sigFrom>
+					<pageFrom>
+						<pageRef>86</pageRef>
+					</pageFrom>
+					<RTPart rend="italic">‘A Short </RTPart>
+					<RTPart rend="smallcap">Treatise, </RTPart>
+					<RTPart rend="italic">&amp;c.’</RTPart>
+				</RT>
+			</section>
+			<section>
+				<content>
+					<sigFrom>
+						<sigRef>E8r</sigRef>
+					</sigFrom>
+					<pageFrom>
+						<pageRef>87</pageRef>
+					</pageFrom>
+					<sigTo>
+						<sigRef>E8v</sigRef>
+					</sigTo>
+					<pageTo>
+						<pageRef>88</pageRef>
+					</pageTo>
+					<contentPart>blank</contentPart>
+				</content>
+			</section>
+		</sections>
+		<catchwords>
+			<catchword>
+				<sigRef>B12v</sigRef>
+				<pageRef>24</pageRef>
+				<cwFoot rend="roman">CHAP</cwFoot>
+				<cwHead rend="roman">CHAP.</cwHead>
+			</catchword>
+			<catchword>
+				<sigRef>C6v</sigRef>
+				<pageRef>36</pageRef>
+				<cwFoot rend="roman">ſup-</cwFoot>
+				<cwHead rend="roman">poſe</cwHead>
+			</catchword>
+		</catchwords>
+	</text>
+</entry>
