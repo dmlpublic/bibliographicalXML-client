@@ -1,14 +1,13 @@
-
 import sys
 sys.path.insert(0, '..\\..\\bibXML-service\\scripts')
 
 import checkCollation
+import utilities
 from checkBibl import checkBibl
-from utilities import getXMLfiles
 
 
 # files = ['..\\books\\whist.3.xml']
-files = getXMLfiles()
+files = utilities.getXMLfiles()
 
 for file in files:
 	print (file)
