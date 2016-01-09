@@ -1,0 +1,14 @@
+#italic{
+    font-style:italic;
+}
+
+#super{
+    font-size:.83em;
+    vertical-align:super;
+}
+
+#sub{
+    font-size:.83em;
+    vertical-align:sub;
+}
+

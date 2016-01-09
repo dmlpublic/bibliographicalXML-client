@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="../xsl/minimal.xsl"?>
+
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="../schemas/minimal.xsd ../schemas/minimal.xsd"
+    xmlns="https://github.com/cacology/bibliographicalXML">
+    <collation>
+        <format>8</format>
+        <collationFormula>
+            <gatherings>
+                <gatheringRange signed="true">
+                    <sigStart>A</sigStart>
+                    <sigEnd>D</sigEnd>
+                    <leaves>8</leaves>
+                </gatheringRange>
+            </gatherings>
+            <signatureLeaves>$½</signatureLeaves>
+        </collationFormula>
+        <totalLeaves>32</totalLeaves>
+        <pagination>
+            <pageRanges>
+                <pageRange numbered="true">
+                    <start>1</start>
+                    <end>64</end>
+                </pageRange>
+            </pageRanges>
+        </pagination>
+    </collation>
+</book>

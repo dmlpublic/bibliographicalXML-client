@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="../xsl/minimal.xsl"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="https://github.com/cacology/bibliographicalXML"
+  xmlns:c="https://github.com/cacology/bibliographicalXML">
+
+  <xs:include schemaLocation="../../bibXML-service/schemas/collation.1.0.xsd/"/>
+
+  <xs:element name="book">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="c:collation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
