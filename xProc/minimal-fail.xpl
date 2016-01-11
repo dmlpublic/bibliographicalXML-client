@@ -2,7 +2,22 @@
     version="1.0" name="minimal">
 
     <p:documentation>
-        See discussion in minimal-fail.xpl
+        For now, this XProc will not properly do the XSLT transform. There are some
+        errors related to data types.
+
+        Example:
+
+            xsl:if test="@signed = 'false'" generates an error that it could not compare a boolean (@signed)
+            to a string ('false').
+
+        The problem is that the result of the p:validate-with-xml-schema step does not include the xml header
+        ?xml version="1.0" encoding="utf-8"?
+
+        minimal.xpl solves this by eating the output from p:validate-with-xml-schema step and passing the
+        original xml document to p:xslt.
+
+        Research continues.
+
     </p:documentation>
 
     <p:input port="source">
@@ -15,12 +30,7 @@
         </p:input>
     </p:validate-with-xml-schema>
 
-    <p:sink/>
-
     <p:xslt name="style">
-        <p:input port="source">
-            <p:pipe port="source" step="minimal"/>
-        </p:input>
         <p:input port="stylesheet">
             <p:document href="../xsl/minimal.xsl"/>
         </p:input>

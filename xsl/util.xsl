@@ -3,7 +3,7 @@
 	<xsl:template match="header">
 		<hr/>
 		<h2 class="center">A Descriptive Bibliography of Edmond Hoyle</h2>
-		<p>Copyright &#169; 2014-5 by David Levy</p>
+		<p>Copyright &#169; 2014-6 by David Levy</p>
 
 		<xsl:variable name="DATE">
 			<xsl:value-of select="dateUpdate"/>
