@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '..\\..\\bibXML-service\\scripts')
+sys.path.insert(0, '..\\bibliographicalXML\\scripts')
 
 import checkCollation
 import utilities
@@ -15,4 +15,3 @@ for file in files:
 	checkBibl(file)
 
 print ("done")
-

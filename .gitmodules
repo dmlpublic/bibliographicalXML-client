@@ -1,0 +1,3 @@
+[submodule "bibliographicalXML"]
+	path = bibliographicalXML
+	url = git@github.com:cacology/bibliographicalXML.git

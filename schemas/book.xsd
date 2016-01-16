@@ -4,8 +4,8 @@
   targetNamespace="https://github.com/cacology/bibliographicalXML"
   xmlns:c="https://github.com/cacology/bibliographicalXML">
 
-  <xs:include schemaLocation="../../bibXML-service/schemas/collation.1.0.xsd/"/>
-  
+  <xs:include schemaLocation="../bibliographicalXML/schemas/collation.1.0.xsd"/>
+
   <xs:element name="entry">
     <xs:complexType>
       <xs:sequence>
@@ -172,7 +172,7 @@
 <xs:attributeGroup name="attr_isSeen">
   <xs:attribute name="isSeen" use="required"/>
 </xs:attributeGroup>
-  
+
   <xs:attributeGroup name="attr_isCollection">
     <xs:attribute name="isCollection" use="optional" default="false"/>
   </xs:attributeGroup>
@@ -211,7 +211,7 @@
   <xs:attributeGroup name="attr_titleType">
     <xs:attribute name="titleType" use="required"/>
   </xs:attributeGroup>
-  
+
   <xs:element name="content">
     <xs:complexType>
       <xs:sequence>
@@ -735,7 +735,7 @@
   <xs:element name="RTPart" type="c:qft"/>
   <xs:element name="cwFoot" type="c:qft"/>
   <xs:element name="cwHead" type="c:qft"/>
-  
+
   <xs:attribute name="url" type="xs:string"/>
 
   <xs:element name="textLang" default="en">
@@ -767,7 +767,7 @@
     </xs:simpleType>
   </xs:attribute>
 
-  
+
   <xs:element name="respGroup">
     <xs:complexType>
       <xs:simpleContent>
