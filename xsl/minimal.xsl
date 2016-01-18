@@ -1,6 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="https://github.com/cacology/bibliographicalXML">
 	<xsl:include href="util.xsl"/>
-	<xsl:include href="../../bibXML-service/xsl/collation.xsl"/>
+	<xsl:include href="../bibliographicalXML/xsl/collation.xsl"/>
 	<xsl:output indent="yes" method="html" omit-xml-declaration="yes"/>
 
 	<!--  	<xsl:key name="myTest" match="anomSignature" use="anomType"/>-->
