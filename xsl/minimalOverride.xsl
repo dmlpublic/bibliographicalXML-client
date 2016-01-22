@@ -2,7 +2,6 @@
 	xpath-default-namespace="https://github.com/cacology/bibliographicalXML"
 	xmlns:b="https://github.com/cacology/bibliographicalXML">
 
-	<xsl:include href="util.xsl"/>
 	<xsl:include href="../bibliographicalXML/xsl/collation.xsl"/>
 	<xsl:output indent="yes" method="html" omit-xml-declaration="yes"/>
 
