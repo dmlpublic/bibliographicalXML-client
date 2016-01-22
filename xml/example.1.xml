@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="../xsl/minimal.xsl"?>
+
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="../schemas/minimal.xsd ../schemas/minimal.xsd"
+  xmlns="https://github.com/cacology/bibliographicalXML"
+  xmlns:b="https://github.com/cacology/bibliographicalXML">
+
+  <collation>
+    <format>12</format>
+    <collationFormula>
+      <gatherings>
+        <gatheringRange b:signed="false">
+          <sigStart>A</sigStart>
+          <leaves>2</leaves>
+        </gatheringRange>
+        <gatheringRange b:signed="true">
+          <sigStart>B</sigStart>
+          <sigEnd>U</sigEnd>
+          <leaves>6</leaves>
+        </gatheringRange>
+        <gatheringRange b:signed="true">
+          <sigStart>W</sigStart>
+          <sigEnd>W</sigEnd>
+          <leaves>6</leaves>
+        </gatheringRange>
+        <gatheringRange b:signed="true">
+          <sigStart>X</sigStart>
+          <sigEnd>Z</sigEnd>
+          <leaves>6</leaves>
+        </gatheringRange>
+        <gatheringRange b:signed="true">
+          <multSigStart>2</multSigStart>
+          <sigStart>A</sigStart>
+          <sigEnd>C</sigEnd>
+          <leaves>6</leaves>
+        </gatheringRange>
+        <gatheringRange b:signed="true">
+          <multSigStart>2</multSigStart>
+          <sigStart>D</sigStart>
+          <leaves>4</leaves>
+        </gatheringRange>
+      </gatherings>
+      <signatureLeaves>$1,3</signatureLeaves>
+      <anomSignatures>
+        <anomSignature>
+          <anomType>-</anomType>
+          <multSig>2</multSig>
+          <sigRef>D3</sigRef>
+        </anomSignature>
+      </anomSignatures>
+      <signaturePattern>$3 as '$2'</signaturePattern>
+    </collationFormula>
+    <totalLeaves>162</totalLeaves>
+    <pagination>
+      <pageRanges>
+        <pageRange b:numbered="false">
+          <start>i</start>
+          <end>iii</end>
+        </pageRange>
+        <pageRange b:numbered="true">
+          <start>iv</start>
+        </pageRange>
+        <pageRange b:numbered="false">
+          <start>5</start>
+        </pageRange>
+        <pageRange b:numbered="true">
+          <start>6</start>
+          <end>321</end>
+        </pageRange>
+        <pageRange b:numbered="false">
+          <start>322</start>
+          <end>324</end>
+        </pageRange>
+      </pageRanges>
+    </pagination>
+  </collation>
+</book>

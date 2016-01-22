@@ -2,12 +2,13 @@
 
 <book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="../schemas/minimal.xsd ../schemas/minimal.xsd"
-    xmlns="https://github.com/cacology/bibliographicalXML">
+    xmlns="https://github.com/cacology/bibliographicalXML"
+    xmlns:b="https://github.com/cacology/bibliographicalXML">
     <collation>
         <format>8</format>
         <collationFormula>
             <gatherings>
-                <gatheringRange signed="true">
+                <gatheringRange b:signed="true">
                     <sigStart>A</sigStart>
                     <sigEnd>D</sigEnd>
                     <leaves>8</leaves>
@@ -18,7 +19,7 @@
         <totalLeaves>32</totalLeaves>
         <pagination>
             <pageRanges>
-                <pageRange numbered="true">
+                <pageRange b:numbered="true">
                     <start>1</start>
                     <end>64</end>
                 </pageRange>

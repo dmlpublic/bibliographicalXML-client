@@ -1,4 +1,7 @@
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="https://github.com/cacology/bibliographicalXML">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xpath-default-namespace="https://github.com/cacology/bibliographicalXML"
+	xmlns:b="https://github.com/cacology/bibliographicalXML">
+
 	<xsl:include href="util.xsl"/>
 	<xsl:include href="../bibliographicalXML/xsl/collation.xsl"/>
 	<xsl:output indent="yes" method="html" omit-xml-declaration="yes"/>
@@ -19,9 +22,9 @@
 				<table>
 					<!-- Display the title page before half- and section-titles -->
 					<xsl:apply-templates
-						select="entry/text/sections/section/titlePage[@titleType = 'title']"/>
+						select="entry/text/sections/section/titlePage[@b:titleType = 'title']"/>
 					<xsl:apply-templates
-						select="entry/text/sections/section/titlePage[@titleType != 'title']"/>
+						select="entry/text/sections/section/titlePage[@b:titleType != 'title']"/>
 
 					<xsl:apply-templates select="entry/text/collation"/>
 					<xsl:apply-templates select="/entry/bookDesc/collectedParts"/>
@@ -67,20 +70,20 @@
 	<xsl:template match="titlePage">
 		<tr>
 			<xsl:choose>
-				<xsl:when test="@titleType = 'halfTitle'">
+				<xsl:when test="@b:titleType = 'halfTitle'">
 					<td id="row-label">Half Title:</td>
 				</xsl:when>
-				<xsl:when test="@titleType = 'cancelandum'">
+				<xsl:when test="@b:titleType = 'cancelandum'">
 					<td id="row-label">Cancelandum:</td>
 				</xsl:when>
-				<xsl:when test="@titleType = 'section'">
+				<xsl:when test="@b:titleType = 'section'">
 					<td id="row-label">
 						<xsl:text>Section Title </xsl:text>
-						<xsl:value-of select="@sectionID"/>
+						<xsl:value-of select="@b:sectionID"/>
 						<xsl:text>:</xsl:text>
 					</td>
 				</xsl:when>
-				<xsl:when test="@titleType = 'title'">
+				<xsl:when test="@b:titleType = 'title'">
 					<td id="row-label">Title:</td>
 				</xsl:when>
 			</xsl:choose>
@@ -101,12 +104,12 @@
 
 	<xsl:template match="respStmt">
 
-		<xsl:if test="respItem/@respType = 'publisher'">
+		<xsl:if test="respItem/@b:respType = 'publisher'">
 			<tr>
 				<td id="row-label">Publisher: </td>
 				<td colspan="4">
 					<xsl:for-each select="respItem">
-						<xsl:if test="@respType = 'publisher'">
+						<xsl:if test="@b:respType = 'publisher'">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</xsl:for-each>
@@ -114,12 +117,12 @@
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="respItem/@respType = 'printer'">
+		<xsl:if test="respItem/@b:respType = 'printer'">
 			<tr>
 				<td id="row-label">Printer: </td>
 				<td colspan="4">
 					<xsl:for-each select="respItem">
-						<xsl:if test="@respType = 'printer'">
+						<xsl:if test="@b:respType = 'printer'">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</xsl:for-each>
@@ -127,12 +130,12 @@
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="respItem/@respType = 'translator'">
+		<xsl:if test="respItem/@b:respType = 'translator'">
 			<tr>
 				<td id="row-label">Translator: </td>
 				<td colspan="4">
 					<xsl:for-each select="respItem">
-						<xsl:if test="@respType = 'translator'">
+						<xsl:if test="@b:respType = 'translator'">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</xsl:for-each>
@@ -144,7 +147,7 @@
 
 	<xsl:template match="respItem">
 		<!-- If there is a second respItem of the same type, add a line break -->
-		<xsl:if test="@respType = preceding-sibling::respItem/@respType">
+		<xsl:if test="@b:respType = preceding-sibling::respItem/@b:respType">
 			<xsl:text>, </xsl:text>
 		</xsl:if>
 
@@ -165,12 +168,12 @@
 
 	<xsl:template match="periodicalReferences">
 
-		<xsl:if test="periodicalReference/@periodicalType = 'advertisement'">
+		<xsl:if test="periodicalReference/@b:periodicalType = 'advertisement'">
 			<tr>
 				<td id="row-label">Advertisements: </td>
 				<td colspan="4">
 					<xsl:for-each select="periodicalReference">
-						<xsl:if test="@periodicalType = 'advertisement'">
+						<xsl:if test="@b:periodicalType = 'advertisement'">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</xsl:for-each>
@@ -178,12 +181,12 @@
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="periodicalReference/@periodicalType = 'notice'">
+		<xsl:if test="periodicalReference/@b:periodicalType = 'notice'">
 			<tr>
 				<td id="row-label">Notices: </td>
 				<td colspan="4">
 					<xsl:for-each select="periodicalReference">
-						<xsl:if test="@periodicalType = 'notice'">
+						<xsl:if test="@b:periodicalType = 'notice'">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</xsl:for-each>
@@ -191,12 +194,12 @@
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="periodicalReference/@periodicalType = 'review'">
+		<xsl:if test="periodicalReference/@b:periodicalType = 'review'">
 			<tr>
 				<td id="row-label">Reviews: </td>
 				<td colspan="4">
 					<xsl:for-each select="periodicalReference">
-						<xsl:if test="@periodicalType = 'review'">
+						<xsl:if test="@b:periodicalType = 'review'">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</xsl:for-each>
@@ -211,16 +214,16 @@
 	<xsl:template match="periodicalReferences">
 
 		<xsl:for-each select="periodicalReference">
-			<xsl:variable name="TYPE" select="@periodicalType"/>
+			<xsl:variable name="TYPE" select="@b:periodicalType"/>
 			<xsl:choose>
 				<xsl:when
-					test="position()=1 or @periodicalType != preceding-sibling::periodicalReference/@periodicalType">
+					test="position()=1 or @b:periodicalType != preceding-sibling::periodicalReference/@b:periodicalType">
 					<tr>
 						<td id="row-label">
-							<xsl:value-of select="@periodicalType"/>
+							<xsl:value-of select="@b:periodicalType"/>
 						</td>
 						<td colspan="4">
-							<xsl:if test="$TYPE = @periodicalType">
+							<xsl:if test="$TYPE = @b:periodicalType">
 								<xsl:apply-templates select="."/>
 							</xsl:if>
 						</td>
@@ -229,7 +232,7 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<td colspan="4">
-						<xsl:if test="$TYPE = @periodicalType">
+						<xsl:if test="$TYPE = @b:periodicalType">
 							<xsl:apply-templates select="."/>
 						</xsl:if>
 					</td>
@@ -242,7 +245,7 @@
 
 	<xsl:template match="periodicalReference">
 		<!-- If there is a second periodicalReference of the same type, add a line break -->
-		<xsl:if test="@periodicalType = preceding-sibling::periodicalReference/@periodicalType">
+		<xsl:if test="@b:periodicalType = preceding-sibling::periodicalReference/@b:periodicalType">
 			<br/>
 		</xsl:if>
 
@@ -362,42 +365,42 @@
 
 	<xsl:template match="holdings">
 
-		<xsl:if test="count(holding[@isSeen = 'true' and not(@isCollection = 'true')]) > 0">
+		<xsl:if test="count(holding[@b:isSeen = 'true' and not(@b:isCollection = 'true')]) > 0">
 			<tr>
 				<td id="row-label">Copies Seen:</td>
 				<td colspan="4">
 					<xsl:apply-templates
-						select="holding[@isSeen = 'true' and not(@isCollection = 'true')]"/>
+						select="holding[@b:isSeen = 'true' and not(@b:isCollection = 'true')]"/>
 				</td>
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="count(holding[@isSeen = 'true' and @isCollection = 'true']) > 0">
+		<xsl:if test="count(holding[@b:isSeen = 'true' and @b:isCollection = 'true']) > 0">
 			<tr>
 				<td id="row-label">Copies Seen in Publisher's Collections:</td>
 				<td colspan="4">
 					<xsl:apply-templates
-						select="holding[@isSeen = 'true' and @isCollection = 'true']"/>
+						select="holding[@b:isSeen = 'true' and @b:isCollection = 'true']"/>
 				</td>
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="count(holding[@isSeen = 'false' and not(@isCollection = 'true')]) > 0">
+		<xsl:if test="count(holding[@b:isSeen = 'false' and not(@b:isCollection = 'true')]) > 0">
 			<tr>
 				<td id="row-label">Other Copies:</td>
 				<td colspan="4">
 					<xsl:apply-templates
-						select="holding[@isSeen = 'false' and not(@isCollection = 'true')]"/>
+						select="holding[@b:isSeen = 'false' and not(@b:isCollection = 'true')]"/>
 				</td>
 			</tr>
 		</xsl:if>
 
-		<xsl:if test="count(holding[@isSeen = 'false' and @isCollection = 'true']) > 0">
+		<xsl:if test="count(holding[@b:isSeen = 'false' and @b:isCollection = 'true']) > 0">
 			<tr>
 				<td id="row-label">Other Copies in Publisher's Collections:</td>
 				<td colspan="4">
 					<xsl:apply-templates
-						select="holding[@isSeen = 'false' and @isCollection = 'true']"/>
+						select="holding[@b:isSeen = 'false' and @b:isCollection = 'true']"/>
 				</td>
 			</tr>
 		</xsl:if>
@@ -435,9 +438,9 @@
 	<xsl:template match="surrogate">
 		<xsl:text> (</xsl:text>
 		<xsl:choose>
-			<xsl:when test="@url">
+			<xsl:when test="@b:url">
 				<xsl:variable name="URL">
-					<xsl:value-of select="@url"/>
+					<xsl:value-of select="@b:url"/>
 				</xsl:variable>
 				<a href="{$URL}" target="blank_">
 					<xsl:value-of select="."/>
@@ -542,12 +545,12 @@
 		<xsl:variable name="class">
 			<xsl:choose>
 				<xsl:when
-					test="not(RT/@isOn = 'true') and following-sibling::*[1]/RT/@isOn = 'true'"
+					test="not(RT/@b:isOn = 'true') and following-sibling::*[1]/RT/@b:isOn = 'true'"
 					>top</xsl:when>
-				<xsl:when test="RT/@isOn = 'true' and following-sibling::*[1]/RT/@isOn = 'true'"
+				<xsl:when test="RT/@b:isOn = 'true' and following-sibling::*[1]/RT/@b:isOn = 'true'"
 					>middle</xsl:when>
 				<xsl:when
-					test="RT/@isOn = 'true' and not(following-sibling::*[1]/RT/@isOn = 'true')"
+					test="RT/@b:isOn = 'true' and not(following-sibling::*[1]/RT/@b:isOn = 'true')"
 					>bottom</xsl:when>
 				<xsl:otherwise>default</xsl:otherwise>
 			</xsl:choose>
@@ -584,7 +587,7 @@
 		<xsl:param name="class"/>
 
 		<td class="{$class}">
-			<xsl:if test="@isOn = 'true'">
+			<xsl:if test="@b:isOn = 'true'">
 				<xsl:text>on </xsl:text>
 			</xsl:if>
 			<xsl:apply-templates select="sigFrom"/>
@@ -623,64 +626,6 @@
 		<xsl:apply-templates select="sigRef"/>
 	</xsl:template>
 
-	<xsl:template match="sigRef">
-
-		<xsl:choose>
-
-			<xsl:when test="contains(., '.')">
-
-				<!-- A numeric signature where signature and page are separated
-					with a period. Example: '1.2r'. Parse out the signature ('1'), 
-					page ('2r'), leaf ('2'), and side ('r').
-					Print signature, leaf (in subscript), side.
-				-->
-
-				<xsl:variable name="PAGE">
-					<xsl:value-of select="substring-after(., '.')"/>
-				</xsl:variable>
-
-				<xsl:variable name="LEAF">
-					<xsl:choose>
-						<xsl:when test="contains($PAGE, 'r')">
-							<xsl:value-of select="substring-before($PAGE, 'r')"/>
-						</xsl:when>
-						<xsl:when test="contains($PAGE, 'v')">
-							<xsl:value-of select="substring-before($PAGE, 'v')"/>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="$PAGE"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:variable>
-
-				<xsl:variable name="SIDE">
-					<xsl:choose>
-						<xsl:when test="contains($PAGE, 'r')">
-							<xsl:value-of select="'r'"/>
-						</xsl:when>
-						<xsl:when test="contains($PAGE, 'v')">
-							<xsl:value-of select="'v'"/>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="''"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:variable>
-
-				<xsl:value-of select="substring-before(., '.')"/>
-				<span id="sub">
-					<xsl:value-of select="$LEAF"/>
-				</span>
-				<xsl:value-of select="$SIDE"/>
-			</xsl:when>
-
-			<xsl:otherwise>
-				<xsl:value-of select="."/>
-			</xsl:otherwise>
-
-		</xsl:choose>
-	</xsl:template>
-
 	<xsl:template match="pageFrom">
 		<xsl:text> (</xsl:text>
 		<xsl:apply-templates select="dupSeqPage"/>
@@ -710,8 +655,8 @@
 
 	<xsl:template match="plate">
 		<xsl:choose>
-			<xsl:when test="@plateLocation">
-				<xsl:value-of select="@plateLocation"/>
+			<xsl:when test="@b:plateLocation">
+				<xsl:value-of select="@b:plateLocation"/>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="plateRelation"/>
@@ -795,34 +740,30 @@
 		</tr>
 	</xsl:template>
 
-	<xsl:template match="notes">
-		<xsl:apply-templates select="note"/>
-	</xsl:template>
-
 	<xsl:template match="titlePart | contentPart | RTPart | cwFoot | cwHead | note">
 
-		<xsl:variable name="style" select="@rend"/>
+		<xsl:variable name="style" select="@b:rend"/>
 
 		<xsl:choose>
 			<!-- EXTERNAL LINKS OPEN IN NEW WINDOW -->
-			<xsl:when test="@url and starts-with(@url, 'http')">
-				<a href="{@url}" target="blank_">
+			<xsl:when test="@b:url and starts-with(@b:url, 'http')">
+				<a href="{@b:url}" target="blank_">
 					<xsl:value-of select="."/>
 				</a>
 			</xsl:when>
 			<!-- INTERNAL LINKS OPEN IN SAME WINDOW -->
-			<xsl:when test="@url">
-				<a href="{@url}">
+			<xsl:when test="@b:url">
+				<a href="{@b:url}">
 					<xsl:value-of select="."/>
 				</a>
 			</xsl:when>
-			<xsl:when test="@rend = 'paragraph'">
+			<xsl:when test="@b:rend = 'paragraph'">
 				<p/>
 			</xsl:when>
-			<xsl:when test="@rend = 'break'">
+			<xsl:when test="@b:rend = 'break'">
 				<br/>
 			</xsl:when>
-			<xsl:when test="not(@rend)">
+			<xsl:when test="not(@b:rend)">
 				<span id="roman">
 					<xsl:value-of select="."/>
 				</span>
@@ -838,7 +779,7 @@
 	<xsl:template match="/entry/fileDesc/footer">
 		<hr/>
 		<p>
-			<a href="mailto:trictrac@sbcglobal.net?subject={/entry/bookDesc/bookKeys/fn}"
+			<a href="mailto:trictrac@b:sbcglobal.net?subject={/entry/bookDesc/bookKeys/fn}"
 				>Feedback?</a>
 		</p>
 		<p>

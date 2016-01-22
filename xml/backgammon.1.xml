@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="../xsl/book.xsl"?>
 
 <entry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="../schemas/book.xsd ../schemas/book.xsd" xmlns="https://github.com/cacology/bibliographicalXML">
+	xsi:schemaLocation="../schemas/book.xsd ../schemas/book.xsd" xmlns="https://github.com/cacology/bibliographicalXML"
+	xmlns:b="https://github.com/cacology/bibliographicalXML" >
 	<fileDesc>
 		<title>Backgammon.1</title>
 		<respStmt>
-			<respItem respType="author">
+			<respItem b:respType="author">
 				<persName>
 					<forename>David</forename>
 					<surname>Levy</surname>
@@ -38,20 +39,20 @@
 
 		</bookKeys>
 		<respStmt>
-			<respItem respType="author">
+			<respItem b:respType="author">
 				<persName>
 					<forename>Edmond</forename>
 					<surname>Hoyle</surname>
 				</persName>
 			</respItem>
-			<respItem respType="publisher">
+			<respItem b:respType="publisher">
 				<persName>
 					<forename>Francis</forename>
 					<surname>Cogan</surname>
 				</persName>
 				<share>100</share>
 			</respItem>
-			<respItem respType="printer">
+			<respItem b:respType="printer">
 				<persName>
 					<forename>John</forename>
 					<surname>Hughs</surname>
@@ -60,28 +61,28 @@
 			</respItem>
 		</respStmt>
 		<periodicalReferences>
-			<periodicalReference periodicalType="advertisement">
+			<periodicalReference b:periodicalType="advertisement">
 				<publication>Daily Post</publication>
 				<pubDate>1743-06-29</pubDate>
 				<notes>
 					<note>"To-morrow will be publish’d, Price 2s. 6d." </note>
 					<note>Advertised with </note>
-					<note url="whist.4.xml">Whist.4</note>
+					<note b:url="whist.4.xml">Whist.4</note>
 					<note> and </note>
-					<note url="laws.1">Laws.1</note>
+					<note b:url="laws.1">Laws.1</note>
 					<note>.</note>
 				</notes>
 			</periodicalReference>
-			<periodicalReference periodicalType="advertisement">
+			<periodicalReference b:periodicalType="advertisement">
 				<publication>London Daily Post and General Advertiser</publication>
 				<pubDate>1743-06-29</pubDate>
 				<notes>
 					<note>"This day is publish’d, Price 2s. 6d. In a neat pocket size, done up in
 						fine gold embos'd paper and gilt on the leaves." </note>
 					<note>Advertisements for </note>
-					<note url="whist.4.xml">Whist.4</note>
+					<note b:url="whist.4.xml">Whist.4</note>
 					<note> and </note>
-					<note url="laws.1">Laws.1</note>
+					<note b:url="laws.1">Laws.1</note>
 					<note>.</note>
 				</notes>
 			</periodicalReference>
@@ -119,74 +120,74 @@
 		</listBibl>
 
 		<holdings>
-			<holding isSeen="true">
+			<holding b:isSeen="true">
 				<holder>L</holder>
 				<shelfmark>7913.aa.60</shelfmark>
 				<surrogate>ECCO</surrogate>
 			</holding>
-			<holding isSeen="true" isCollection="true">
+			<holding b:isSeen="true" b:isCollection="true">
 				<holder>O</holder>
 				<shelfmark>12 Theta 1318(5)</shelfmark>
 				<idno>Cogan.D</idno>
 				<sequence>5</sequence>
 			</holding>
-			<holding isSeen="true" isCollection="true">
+			<holding b:isSeen="true" b:isCollection="true">
 				<holder>O</holder>
 				<shelfmark>Jessel f.543(5)</shelfmark>
 				<idno>Cogan.D</idno>
 				<sequence>5</sequence>
 			</holding>
-			<holding isSeen="true">
+			<holding b:isSeen="true">
 				<holder>O</holder>
 				<shelfmark>Jessel f.578</shelfmark>
 			</holding>
-			<holding isSeen="true">
+			<holding b:isSeen="true">
 				<holder>O</holder>
 				<shelfmark>Jessel f.579</shelfmark>
 			</holding>
-			<holding isSeen="true" isCollection="true">
+			<holding b:isSeen="true" b:isCollection="true">
 				<holder>O</holder>
 				<shelfmark>Jessel f.580(2)</shelfmark>
 				<idno>Cogan.D</idno>
 				<sequence>5</sequence>
 			</holding>
-			<holding isSeen="true">
+			<holding b:isSeen="true">
 				<holder>NvLN</holder>
 				<shelfmark>GV1469.B2 H8 1743</shelfmark>
 			</holding>
-			<holding isSeen="true" isCollection="true">
+			<holding b:isSeen="true" b:isCollection="true">
 				<holder>Levy</holder>
 				<shelfmark>Cogan.B</shelfmark>
 				<idno>Cogan.B</idno>
 				<sequence>3</sequence>
 			</holding>
-			<holding isSeen="false">
+			<holding b:isSeen="false">
 				<holder>SAN</holder>
 				<shelfmark>GV1241.H6</shelfmark>
 			</holding>
-			<holding isSeen="false">
+			<holding b:isSeen="false">
 				<holder>CtY-BR</holder>
 				<shelfmark>NLr89 B2 743h</shelfmark>
 			</holding>
-			<holding isSeen="false">
+			<holding b:isSeen="false">
 				<holder>IU</holder>
 				<shelfmark>X 795.1 H85S</shelfmark>
 			</holding>
-			<holding isSeen="false" isCollection="true">
+			<holding b:isSeen="false" b:isCollection="true">
 				<holder>InU-Li</holder>
 				<shelfmark>GV1277.H89 1743</shelfmark>
 				<idno>Cogan.C</idno>
 				<sequence>3</sequence>
 			</holding>
-			<holding isSeen="false">
+			<holding b:isSeen="false">
 				<holder>KU-S</holder>
 				<shelfmark>B3393</shelfmark>
 			</holding>
-			<holding isSeen="false">
+			<holding b:isSeen="false">
 				<holder>PBL</holder>
 				<shelfmark>795.1.H867s.T</shelfmark>
 			</holding>
-			<holding isSeen="false" isCollection="true">
+			<holding b:isSeen="false" b:isCollection="true">
 				<holder>TxU</holder>
 				<shelfmark>GV1277.H89 1743c GTE</shelfmark>
 				<idno>Cogan.A</idno>
@@ -195,7 +196,7 @@
 					<note>rebound and decorated with fore-edge painting</note>
 				</notes>
 			</holding>
-			<holding isSeen="false">
+			<holding b:isSeen="false">
 				<holder>Vi</holder>
 				<shelfmark>GV1469.B2 H8 1743</shelfmark>
 			</holding>
@@ -210,15 +211,15 @@
 			<format>12</format>
 			<collationFormula>
 				<gatherings>
-					<gatheringRange signed="true">
+					<gatheringRange b:signed="true">
 						<sigStart>π</sigStart>
 						<leaves>1</leaves>
 					</gatheringRange>
-					<gatheringRange signed="false">
+					<gatheringRange b:signed="false">
 						<sigStart>A</sigStart>
 						<leaves>2</leaves>
 					</gatheringRange>
-					<gatheringRange signed="true">
+					<gatheringRange b:signed="true">
 						<sigStart>B</sigStart>
 						<sigEnd>D</sigEnd>
 						<leaves>12</leaves>
@@ -244,14 +245,14 @@
 			<totalLeaves>38</totalLeaves>
 			<pagination>
 				<pageRanges>
-					<pageRange numbered="false" range="true">
+					<pageRange b:numbered="false" b:range="true">
 						<start>6</start>
 					</pageRange>
-					<pageRange numbered="true">
+					<pageRange b:numbered="true">
 						<start>1</start>
 						<end>69</end>
 					</pageRange>
-					<pageRange numbered="false">
+					<pageRange b:numbered="false">
 						<start>70</start>
 					</pageRange>
 				</pageRanges>
@@ -259,14 +260,14 @@
 		</collation>
 		<sections>
 			<section>
-				<titlePage titleType="title">
-					<titlePart rend="roman">A SHORT | TREATISE | On the </titlePart>
-					<titlePart rend="smallcap">Game </titlePart>
-					<titlePart rend="roman">of | </titlePart>
-					<titlePart rend="italic">Back-Gammon. | </titlePart>
-					<titlePart rend="roman">CONTAINING, [11 lines to left of rule] A </titlePart>
-					<titlePart rend="smallcap">Table </titlePart>
-					<titlePart rend="roman">of the thirty-ſix | Chances, with Directions how | to
+				<titlePage b:titleType="title">
+					<titlePart b:rend="roman">A SHORT | TREATISE | On the </titlePart>
+					<titlePart b:rend="smallcap">Game </titlePart>
+					<titlePart b:rend="roman">of | </titlePart>
+					<titlePart b:rend="italic">Back-Gammon. | </titlePart>
+					<titlePart b:rend="roman">CONTAINING, [11 lines to left of rule] A </titlePart>
+					<titlePart b:rend="smallcap">Table </titlePart>
+					<titlePart b:rend="roman">of the thirty-ſix | Chances, with Directions how | to
 						find out the Odds of being | hit, upon ſingle, or double | Dice. | Rules
 						whereby a Beginner may, | with due Attention to them, | attain playing it
 						well. | The ſeveral Stages for carrying | your Men home, in order to | loſe
@@ -275,25 +276,25 @@
 						for one. | Caſes ſtated, how to know when | you may have the better of |
 						ſaving a Gammon by running. | Variety of Caſes of Curioſity | and
 						Inſtruction. | The Laws of the Game. | [rule] | By </titlePart>
-					<titlePart rend="italic">EDMOND HOYLE, </titlePart>
-					<titlePart rend="roman">Gent. | [rule] | [tailpiece] | [rule] | </titlePart>
-					<titlePart rend="italic">LONDON: </titlePart>
-					<titlePart rend="roman">| Printed for F. </titlePart>
-					<titlePart rend="smallcap">Cogan, </titlePart>
-					<titlePart rend="roman">between the two | </titlePart>
-					<titlePart rend="italic">Temple-Gates </titlePart>
-					<titlePart rend="roman">in </titlePart>
-					<titlePart rend="italic">Fleet-ſtreet, </titlePart>
-					<titlePart rend="roman">1743. | [in square brackets] Price, 2</titlePart>
-					<titlePart rend="italic">s. </titlePart>
-					<titlePart rend="roman">6</titlePart>
-					<titlePart rend="italic">d. </titlePart>
+					<titlePart b:rend="italic">EDMOND HOYLE, </titlePart>
+					<titlePart b:rend="roman">Gent. | [rule] | [tailpiece] | [rule] | </titlePart>
+					<titlePart b:rend="italic">LONDON: </titlePart>
+					<titlePart b:rend="roman">| Printed for F. </titlePart>
+					<titlePart b:rend="smallcap">Cogan, </titlePart>
+					<titlePart b:rend="roman">between the two | </titlePart>
+					<titlePart b:rend="italic">Temple-Gates </titlePart>
+					<titlePart b:rend="roman">in </titlePart>
+					<titlePart b:rend="italic">Fleet-ſtreet, </titlePart>
+					<titlePart b:rend="roman">1743. | [in square brackets] Price, 2</titlePart>
+					<titlePart b:rend="italic">s. </titlePart>
+					<titlePart b:rend="roman">6</titlePart>
+					<titlePart b:rend="italic">d. </titlePart>
 				</titlePage>
 				<content>
 					<sigFrom>
 						<sigRef>π1r</sigRef>
 					</sigFrom>
-					<contentPart rend="roman">title</contentPart>
+					<contentPart b:rend="roman">title</contentPart>
 				</content>
 			</section>
 			<section>
@@ -301,7 +302,7 @@
 					<sigFrom>
 						<sigRef>π1v</sigRef>
 					</sigFrom>
-					<contentPart rend="roman">blank</contentPart>
+					<contentPart b:rend="roman">blank</contentPart>
 				</content>
 			</section>
 			<section>
@@ -309,7 +310,7 @@
 					<sigFrom>
 						<sigRef>A1r</sigRef>
 					</sigFrom>
-					<contentPart rend="roman">‘TO THE | READER. | ... | [autograph of Edmond
+					<contentPart b:rend="roman">‘TO THE | READER. | ... | [autograph of Edmond
 						Hoyle]’</contentPart>
 				</content>
 			</section>
@@ -318,7 +319,7 @@
 					<sigFrom>
 						<sigRef>A1v</sigRef>
 					</sigFrom>
-					<contentPart rend="roman">blank</contentPart>
+					<contentPart b:rend="roman">blank</contentPart>
 				</content>
 			</section>
 			<section>
@@ -326,10 +327,10 @@
 					<sigFrom>
 						<sigRef>A2r</sigRef>
 					</sigFrom>
-					<contentPart rend="italic">‘Where may be had, juſt Publiſhed, </contentPart>
+					<contentPart b:rend="italic">‘Where may be had, juſt Publiſhed, </contentPart>
 					<contentPart>[advertisemt for </contentPart>
-					<contentPart url="whist.4.xml">Whist.4</contentPart>
-					<contentPart rend="roman">]’</contentPart>
+					<contentPart b:url="whist.4.xml">Whist.4</contentPart>
+					<contentPart b:rend="roman">]’</contentPart>
 				</content>
 			</section>
 			<section>
@@ -337,7 +338,7 @@
 					<sigFrom>
 						<sigRef>A2v</sigRef>
 					</sigFrom>
-					<contentPart rend="roman">To the Reader</contentPart>
+					<contentPart b:rend="roman">To the Reader</contentPart>
 				</content>
 			</section>
 			<section>
@@ -354,10 +355,10 @@
 					<pageTo>
 						<pageRef>62</pageRef>
 					</pageTo>
-					<contentPart rend="roman">‘[double rule] | A Short | TREATISE | On the </contentPart>
-					<contentPart rend="smallcap">Game </contentPart>
-					<contentPart rend="roman">of | </contentPart>
-					<contentPart rend="italic">Back-Gammon. </contentPart>
+					<contentPart b:rend="roman">‘[double rule] | A Short | TREATISE | On the </contentPart>
+					<contentPart b:rend="smallcap">Game </contentPart>
+					<contentPart b:rend="roman">of | </contentPart>
+					<contentPart b:rend="italic">Back-Gammon. </contentPart>
 					<contentPart>| [...]’</contentPart>
 				</content>
 				<gamesCovered>
@@ -378,10 +379,10 @@
 					<pageTo>
 						<pageRef>64</pageRef>
 					</pageTo>
-					<contentPart rend="italic">‘The </contentPart>
-					<contentPart rend="roman">LAWS </contentPart>
-					<contentPart rend="italic">of | </contentPart>
-					<contentPart rend="smallcap">Back-Gammon. </contentPart>
+					<contentPart b:rend="italic">‘The </contentPart>
+					<contentPart b:rend="roman">LAWS </contentPart>
+					<contentPart b:rend="italic">of | </contentPart>
+					<contentPart b:rend="smallcap">Back-Gammon. </contentPart>
 					<contentPart>| [...]’</contentPart>
 				</content>
 			</section>
@@ -399,9 +400,9 @@
 					<pageTo>
 						<pageRef>69</pageRef>
 					</pageTo>
-					<contentPart rend="roman">‘[double rule] An </contentPart>
-					<contentPart rend="smallcap">Alphabetical | </contentPart>
-					<contentPart rend="roman">TABLE | OF THE | CONTENTS. | [...]’</contentPart>
+					<contentPart b:rend="roman">‘[double rule] An </contentPart>
+					<contentPart b:rend="smallcap">Alphabetical | </contentPart>
+					<contentPart b:rend="roman">TABLE | OF THE | CONTENTS. | [...]’</contentPart>
 				</content>
 			</section>
 			<section>
@@ -412,7 +413,7 @@
 					<pageFrom>
 						<pageRef>70</pageRef>
 					</pageFrom>
-					<contentPart rend="roman">blank</contentPart>
+					<contentPart b:rend="roman">blank</contentPart>
 				</content>
 			</section>
 		</sections>
@@ -420,14 +421,14 @@
 			<catchword>
 				<sigRef>C7v</sigRef>
 				<pageRef>38</pageRef>
-				<cwFoot rend="italic">Anſwer,</cwFoot>
-				<cwHead rend="italic">Anſwer.</cwHead>
+				<cwFoot b:rend="italic">Anſwer,</cwFoot>
+				<cwHead b:rend="italic">Anſwer.</cwHead>
 			</catchword>
 			<catchword>
 				<sigRef>C9r</sigRef>
 				<pageRef>41</pageRef>
-				<cwFoot rend="italic">Anſwer,</cwFoot>
-				<cwHead rend="italic">Anſwer.</cwHead>
+				<cwFoot b:rend="italic">Anſwer,</cwFoot>
+				<cwHead b:rend="italic">Anſwer.</cwHead>
 			</catchword>
 		</catchwords>
 		<pressFigures>

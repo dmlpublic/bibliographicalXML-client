@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="https://github.com/cacology/bibliographicalXML"
-  xmlns:c="https://github.com/cacology/bibliographicalXML">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+  xmlns:b="https://github.com/cacology/bibliographicalXML"
+  targetNamespace="https://github.com/cacology/bibliographicalXML" elementFormDefault="qualified">
 
-  <xs:include schemaLocation="../bibliographicalXML/schemas/collation.1.0.xsd"/>
+  <xs:override schemaLocation="../bibliographicalXML/schemas/collation.1.0.xsd">
+    <xs:element name="note" type="b:qft" xmlns:b="https://github.com/cacology/bibliographicalXML"/>
+  </xs:override>
+
 
   <xs:element name="entry">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:todo" minOccurs="0"/>
-        <xs:element ref="c:comment" minOccurs="0"/>
-        <xs:element ref="c:fileDesc"/>
-        <xs:element ref="c:bookDesc"/>
-        <xs:element ref="c:text"/>
+        <xs:element ref="b:todo" minOccurs="0"/>
+        <xs:element ref="b:comment" minOccurs="0"/>
+        <xs:element ref="b:fileDesc"/>
+        <xs:element ref="b:bookDesc"/>
+        <xs:element ref="b:text"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -21,10 +25,10 @@
   <xs:element name="fileDesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:title"/>
-        <xs:element ref="c:respStmt"/>
-        <xs:element ref="c:header"/>
-        <xs:element ref="c:footer"/>
+        <xs:element ref="b:title"/>
+        <xs:element ref="b:respStmt"/>
+        <xs:element ref="b:header"/>
+        <xs:element ref="b:footer"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -32,13 +36,13 @@
   <xs:element name="bookDesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:bookKeys"/>
-        <xs:element ref="c:respStmt"/>
-        <xs:element ref="c:periodicalReferences" minOccurs="0"/>
-        <xs:element ref="c:prices" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element ref="c:listBibl" minOccurs="0"/>
-        <xs:element ref="c:holdings"/>
-        <xs:element ref="c:notes" minOccurs="0"/>
+        <xs:element ref="b:bookKeys"/>
+        <xs:element ref="b:respStmt"/>
+        <xs:element ref="b:periodicalReferences" minOccurs="0"/>
+        <xs:element ref="b:prices" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:listBibl" minOccurs="0"/>
+        <xs:element ref="b:holdings"/>
+        <xs:element ref="b:notes" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,13 +50,13 @@
   <xs:element name="text">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:collation"/>
-        <xs:element ref="c:sections"/>
-        <xs:element ref="c:plates" minOccurs="0"/>
-        <xs:element ref="c:catchwords" minOccurs="0"/>
-        <xs:element ref="c:pressFigures" minOccurs="0"/>
-        <xs:element ref="c:imprimatur" minOccurs="0"/>
-        <xs:element ref="c:colophon" minOccurs="0"/>
+        <xs:element ref="b:collation"/>
+        <xs:element ref="b:sections"/>
+        <xs:element ref="b:plates" minOccurs="0"/>
+        <xs:element ref="b:catchwords" minOccurs="0"/>
+        <xs:element ref="b:pressFigures" minOccurs="0"/>
+        <xs:element ref="b:imprimatur" minOccurs="0"/>
+        <xs:element ref="b:colophon" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,22 +64,22 @@
   <xs:element name="bookKeys">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:idno"/>
-        <xs:element ref="c:fn"/>
-        <xs:element ref="c:shortTitle"/>
-        <xs:element ref="c:shortImprint" minOccurs="0"/>
-        <xs:element ref="c:statedEdition" minOccurs="0"/>
-        <xs:element ref="c:description" minOccurs="0"/>
-        <xs:element ref="c:pubYear"/>
-        <xs:element ref="c:pubDate"/>
-        <xs:element ref="c:evidence"/>
-        <xs:element ref="c:edition"/>
-        <xs:element ref="c:issue"/>
-        <xs:element ref="c:categoryID"/>
-        <xs:element ref="c:workID"/>
-        <xs:element ref="c:subWorkID"/>
-        <xs:element ref="c:copiesPrinted" minOccurs="0"/>
-        <xs:element ref="c:textLang"/>
+        <xs:element ref="b:idno"/>
+        <xs:element ref="b:fn"/>
+        <xs:element ref="b:shortTitle"/>
+        <xs:element ref="b:shortImprint" minOccurs="0"/>
+        <xs:element ref="b:statedEdition" minOccurs="0"/>
+        <xs:element ref="b:description" minOccurs="0"/>
+        <xs:element ref="b:pubYear"/>
+        <xs:element ref="b:pubDate"/>
+        <xs:element ref="b:evidence"/>
+        <xs:element ref="b:edition"/>
+        <xs:element ref="b:issue"/>
+        <xs:element ref="b:categoryID"/>
+        <xs:element ref="b:workID"/>
+        <xs:element ref="b:subWorkID"/>
+        <xs:element ref="b:copiesPrinted" minOccurs="0"/>
+        <xs:element ref="b:textLang"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -83,26 +87,26 @@
   <xs:element name="periodicalReferences">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:periodicalReference" maxOccurs="unbounded"/>
+        <xs:element ref="b:periodicalReference" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="periodicalReference" type="c:periodicalItem"/>
+  <xs:element name="periodicalReference" type="b:periodicalItem"/>
 
   <xs:complexType name="periodicalItem">
     <xs:sequence>
-      <xs:element ref="c:publication"/>
-      <xs:element ref="c:pubDate"/>
-      <xs:element ref="c:notes" minOccurs="0"/>
+      <xs:element ref="b:publication"/>
+      <xs:element ref="b:pubDate"/>
+      <xs:element ref="b:notes" minOccurs="0"/>
     </xs:sequence>
-    <xs:attributeGroup ref="c:attr_periodicalType"/>
+    <xs:attribute ref="b:periodicalType" use="required"/>
   </xs:complexType>
 
   <xs:element name="prices">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:price" maxOccurs="unbounded"/>
+        <xs:element ref="b:price" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -110,9 +114,9 @@
   <xs:element name="price">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:priceComponent" maxOccurs="unbounded"/>
-        <xs:element ref="c:note" minOccurs="0"/>
-        <xs:element ref="c:evidence" maxOccurs="unbounded"/>
+        <xs:element ref="b:priceComponent" maxOccurs="unbounded"/>
+        <xs:element ref="b:note" minOccurs="0"/>
+        <xs:element ref="b:evidence" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -120,8 +124,8 @@
   <xs:element name="priceComponent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:amount"/>
-        <xs:element ref="c:unit"/>
+        <xs:element ref="b:amount"/>
+        <xs:element ref="b:unit"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +133,7 @@
   <xs:element name="listBibl">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:bibl" maxOccurs="unbounded"/>
+        <xs:element ref="b:bibl" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -137,9 +141,9 @@
   <xs:element name="bibl">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:reference"/>
-        <xs:element ref="c:idno"/>
-        <xs:element ref="c:notes" minOccurs="0"/>
+        <xs:element ref="b:reference"/>
+        <xs:element ref="b:idno"/>
+        <xs:element ref="b:notes" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -147,7 +151,7 @@
   <xs:element name="holdings">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:holding" maxOccurs="unbounded"/>
+        <xs:element ref="b:holding" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -155,32 +159,24 @@
   <xs:element name="holding">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:holder"/>
-        <xs:element ref="c:shelfmark" minOccurs="0"/>
-        <xs:element ref="c:surrogate" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element ref="c:copies" minOccurs="0"/>
+        <xs:element ref="b:holder"/>
+        <xs:element ref="b:shelfmark" minOccurs="0"/>
+        <xs:element ref="b:surrogate" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:copies" minOccurs="0"/>
         <!-- Where isCollection="true" idno/sequence note shelfmark and position in collection -->
-        <xs:element ref="c:idno" minOccurs="0"/>
-        <xs:element ref="c:sequence" minOccurs="0"/>
-        <xs:element ref="c:notes" minOccurs="0"/>
+        <xs:element ref="b:idno" minOccurs="0"/>
+        <xs:element ref="b:sequence" minOccurs="0"/>
+        <xs:element ref="b:notes" minOccurs="0"/>
       </xs:sequence>
-      <xs:attributeGroup ref="c:attr_isSeen"/>
-      <xs:attributeGroup ref="c:attr_isCollection"/>
+      <xs:attribute ref="b:isSeen" use="required"/>
+      <xs:attribute ref="b:isCollection" use="optional"/>
     </xs:complexType>
   </xs:element>
-
-<xs:attributeGroup name="attr_isSeen">
-  <xs:attribute name="isSeen" use="required"/>
-</xs:attributeGroup>
-
-  <xs:attributeGroup name="attr_isCollection">
-    <xs:attribute name="isCollection" use="optional" default="false"/>
-  </xs:attributeGroup>
 
   <xs:element name="sections">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:section" maxOccurs="unbounded"/>
+        <xs:element ref="b:section" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -188,60 +184,52 @@
   <xs:element name="section">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:titlePage" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element ref="c:content" minOccurs="0"/>
-        <xs:element ref="c:RT" minOccurs="0"/>
-        <xs:element ref="c:gamesCovered" minOccurs="0"/>
-        <xs:element ref="c:subject" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:titlePage" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:content" minOccurs="0"/>
+        <xs:element ref="b:RT" minOccurs="0"/>
+        <xs:element ref="b:gamesCovered" minOccurs="0"/>
+        <xs:element ref="b:subject" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attribute ref="c:id"/>
+      <xs:attribute ref="b:id"/>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="titlePage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:titlePart" maxOccurs="unbounded"/>
+        <xs:element ref="b:titlePart" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attributeGroup ref="c:attr_titleType"/>
-      <xs:attribute ref="c:sectionID"/>
+      <xs:attribute ref="b:titleType" use="required"/>
+      <xs:attribute ref="b:sectionID"/>
     </xs:complexType>
   </xs:element>
-
-  <xs:attributeGroup name="attr_titleType">
-    <xs:attribute name="titleType" use="required"/>
-  </xs:attributeGroup>
 
   <xs:element name="content">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:sigFrom"/>
-        <xs:element ref="c:pageFrom" minOccurs="0"/>
-        <xs:element ref="c:sigTo" minOccurs="0"/>
-        <xs:element ref="c:pageTo" minOccurs="0"/>
-        <xs:element ref="c:contentPart" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:sigFrom"/>
+        <xs:element ref="b:pageFrom" minOccurs="0"/>
+        <xs:element ref="b:sigTo" minOccurs="0"/>
+        <xs:element ref="b:pageTo" minOccurs="0"/>
+        <xs:element ref="b:contentPart" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attributeGroup ref="c:attr_isOn"/>
+      <xs:attribute ref="b:isOn" use="optional"/>
     </xs:complexType>
   </xs:element>
-
-<xs:attributeGroup name="attr_isOn">
-  <xs:attribute name="isOn" use="optional"/>
-</xs:attributeGroup>
 
   <xs:attribute name="isOn" type="xs:boolean" default="true"/>
 
   <xs:element name="RT">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:sigFrom"/>
-        <xs:element ref="c:pageFrom" minOccurs="0"/>
-        <xs:element ref="c:sigTo" minOccurs="0"/>
-        <xs:element ref="c:pageTo" minOccurs="0"/>
-        <xs:element ref="c:addedRange" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element ref="c:RTPart" maxOccurs="unbounded"/>
+        <xs:element ref="b:sigFrom"/>
+        <xs:element ref="b:pageFrom" minOccurs="0"/>
+        <xs:element ref="b:sigTo" minOccurs="0"/>
+        <xs:element ref="b:pageTo" minOccurs="0"/>
+        <xs:element ref="b:addedRange" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:RTPart" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attribute ref="c:isOn" use="optional"/>
+      <xs:attribute ref="b:isOn" use="optional"/>
     </xs:complexType>
   </xs:element>
 
@@ -253,10 +241,10 @@
           ranges noted here. </xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element ref="c:sigFrom"/>
-        <xs:element ref="c:pageFrom" minOccurs="0"/>
-        <xs:element ref="c:sigTo" minOccurs="0"/>
-        <xs:element ref="c:pageTo" minOccurs="0"/>
+        <xs:element ref="b:sigFrom"/>
+        <xs:element ref="b:pageFrom" minOccurs="0"/>
+        <xs:element ref="b:sigTo" minOccurs="0"/>
+        <xs:element ref="b:pageTo" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -264,7 +252,7 @@
   <xs:element name="gamesCovered">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:game" maxOccurs="unbounded"/>
+        <xs:element ref="b:game" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -272,7 +260,7 @@
   <xs:element name="respStmt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:respItem" maxOccurs="unbounded"/>
+        <xs:element ref="b:respItem" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -280,21 +268,17 @@
   <xs:element name="respItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:respGroup" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="b:respGroup" minOccurs="0" maxOccurs="1"/>
         <xs:choice>
-          <xs:element ref="c:persName"/>
-          <xs:element ref="c:orgName"/>
+          <xs:element ref="b:persName"/>
+          <xs:element ref="b:orgName"/>
         </xs:choice>
-        <xs:element ref="c:evidence" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element ref="c:share" minOccurs="0"/>
+        <xs:element ref="b:evidence" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="b:share" minOccurs="0"/>
       </xs:sequence>
-      <xs:attributeGroup ref="c:attr_respType"/>
+      <xs:attribute ref="b:respType" use="required"/>
     </xs:complexType>
   </xs:element>
-
-  <xs:attributeGroup name="attr_respType">
-    <xs:attribute name="respType" use="required"/>
-  </xs:attributeGroup>
 
   <xs:element name="header">
     <xs:complexType>
@@ -308,7 +292,7 @@
   <xs:element name="footer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:home"/>
+        <xs:element ref="b:home"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -316,8 +300,8 @@
   <xs:element name="persName">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:forename"/>
-        <xs:element ref="c:surname"/>
+        <xs:element ref="b:forename"/>
+        <xs:element ref="b:surname"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -344,8 +328,8 @@
   <xs:element name="subject">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:subject1"/>
-        <xs:element ref="c:subject2" minOccurs="0"/>
+        <xs:element ref="b:subject1"/>
+        <xs:element ref="b:subject2" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -353,7 +337,7 @@
   <xs:element name="plates">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:plate" maxOccurs="unbounded"/>
+        <xs:element ref="b:plate" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -361,13 +345,13 @@
   <xs:element name="plate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:plateRelation"/>
-        <xs:group ref="c:sigRefGroup"/>
-        <xs:group ref="c:pageRefGroup" minOccurs="0"/>
-        <xs:element ref="c:plateType"/>
-        <xs:element ref="c:notes" maxOccurs="unbounded"/>
+        <xs:element ref="b:plateRelation"/>
+        <xs:group ref="b:sigRefGroup"/>
+        <xs:group ref="b:pageRefGroup" minOccurs="0"/>
+        <xs:element ref="b:plateType"/>
+        <xs:element ref="b:notes" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attribute ref="c:plateLocation" use="optional"/>
+      <xs:attribute ref="b:plateLocation" use="optional"/>
     </xs:complexType>
   </xs:element>
 
@@ -403,7 +387,7 @@
   <xs:element name="catchwords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:catchword" maxOccurs="unbounded"/>
+        <xs:element ref="b:catchword" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -411,10 +395,10 @@
   <xs:element name="catchword">
     <xs:complexType>
       <xs:sequence>
-        <xs:group ref="c:sigRefGroup"/>
-        <xs:group ref="c:pageRefGroup" minOccurs="0"/>
-        <xs:element ref="c:cwFoot" maxOccurs="unbounded"/>
-        <xs:element ref="c:cwHead" maxOccurs="unbounded"/>
+        <xs:group ref="b:sigRefGroup"/>
+        <xs:group ref="b:pageRefGroup" minOccurs="0"/>
+        <xs:element ref="b:cwFoot" maxOccurs="unbounded"/>
+        <xs:element ref="b:cwHead" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -422,7 +406,7 @@
   <xs:element name="pressFigures">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:pressFigure" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element ref="b:pressFigure" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -430,10 +414,10 @@
   <xs:element name="pressFigure">
     <xs:complexType>
       <xs:sequence>
-        <xs:group ref="c:sigRefGroup"/>
-        <xs:group ref="c:pageRefGroup"/>
-        <xs:element ref="c:forme"/>
-        <xs:element ref="c:mark"/>
+        <xs:group ref="b:sigRefGroup"/>
+        <xs:group ref="b:pageRefGroup"/>
+        <xs:element ref="b:forme"/>
+        <xs:element ref="b:mark"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -471,7 +455,7 @@
   <xs:element name="imprimatur">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:notes"/>
+        <xs:element ref="b:notes"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -479,7 +463,7 @@
   <xs:element name="colophon">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="c:notes"/>
+        <xs:element ref="b:notes"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -490,25 +474,25 @@
 
   <xs:element name="sigFrom">
     <xs:complexType>
-      <xs:group ref="c:sigRefGroup"/>
+      <xs:group ref="b:sigRefGroup"/>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="sigTo">
     <xs:complexType>
-      <xs:group ref="c:sigRefGroup"/>
+      <xs:group ref="b:sigRefGroup"/>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="pageFrom">
     <xs:complexType>
-      <xs:group ref="c:pageRefGroup"/>
+      <xs:group ref="b:pageRefGroup"/>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="pageTo">
     <xs:complexType>
-      <xs:group ref="c:pageRefGroup"/>
+      <xs:group ref="b:pageRefGroup"/>
     </xs:complexType>
   </xs:element>
 
@@ -686,8 +670,8 @@
   <xs:element name="surrogate">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="c:surrogateType">
-          <xs:attributeGroup ref="c:attr_url"/>
+        <xs:extension base="b:surrogateType">
+          <xs:attribute name="url" type="xs:string"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -730,11 +714,11 @@
   </xs:element>
 
   <!-- elements using QFT -->
-  <xs:element name="titlePart" type="c:qft"/>
-  <xs:element name="contentPart" type="c:qft"/>
-  <xs:element name="RTPart" type="c:qft"/>
-  <xs:element name="cwFoot" type="c:qft"/>
-  <xs:element name="cwHead" type="c:qft"/>
+  <xs:element name="titlePart" type="b:qft"/>
+  <xs:element name="contentPart" type="b:qft"/>
+  <xs:element name="RTPart" type="b:qft"/>
+  <xs:element name="cwFoot" type="b:qft"/>
+  <xs:element name="cwHead" type="b:qft"/>
 
   <xs:attribute name="url" type="xs:string"/>
 
@@ -772,7 +756,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute ref="c:seq" use="required"/>
+          <xs:attribute ref="b:seq" use="required"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -816,7 +800,6 @@
     </xs:simpleType>
   </xs:attribute>
 
-  <xs:attributeGroup name="attr_periodicalType">
   <xs:attribute name="periodicalType">
     <xs:simpleType>
       <xs:restriction base="xs:string">
@@ -826,28 +809,25 @@
       </xs:restriction>
     </xs:simpleType>
   </xs:attribute>
-  </xs:attributeGroup>
+
   <xs:element name="todo" type="xs:string"/>
   <xs:element name="comment" type="xs:string"/>
   <xs:element name="fn" type="xs:string"/>
   <xs:element name="home" type="xs:string" default="../index.xml"/>
 
-  <xs:attribute name="signed" type="xs:boolean"/>
-  <xs:attribute name="numbered" type="xs:boolean"/>
-  <xs:attribute name="disjunct">
-    <xs:simpleType>
-      <xs:annotation>
-        <xs:documentation>should be used only for a two-leaf signature that is not a
-          fold</xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:boolean"/>
-    </xs:simpleType>
-  </xs:attribute>
-  <xs:attribute name="range" type="xs:boolean"/>
   <xs:attribute name="isSeen" type="xs:boolean"/>
   <xs:attribute name="isCollection" type="xs:boolean"/>
   <xs:attribute name="id" type="xs:ID"/>
   <xs:attribute name="sectionID" type="xs:string"/>
   <xs:attribute name="seq" type="xs:positiveInteger"/>
+
+  <xs:complexType name="qft">
+    <xs:simpleContent>
+      <xs:extension base="xs:normalizedString">
+        <xs:attribute ref="b:rend" default="roman"/>
+        <xs:attribute ref="b:url" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
 </xs:schema>
