@@ -4,12 +4,12 @@ James Ascher and David Levy are working to extract reusable components from Levy
 
 **Collation** is the first component to be extracted. **Collation** resides in https://github.com/cacology/bibliographicalXML.git. 
 
-bibliogrphicalXML-client is a client repository demonostrating how **collation** can be used. It has a schema (book.xsd) that includes collation.xsd. Whist.3.xml (and other xml files) are sample descriptions unchanaged from Levy's Hoyle bibliography (except for headers and namespaces) that validate with book.xsd and collation.xsd
+bibliogrphicalXML-client is a client repository demonostrating how **collation** can be used. It has two complete examples. 
 
-To make things work, this repository should be cloned to a directory called bibXML-client and the other repostory to a sibling directory called bibXML-service. Later we can find a more robust way for the client code to find the reusable code. 
+**minimal** has a schema (minimal.xsd) that includes the collation schema, an XML file with a sample collation (minimal.xml), and a style sheet (minimal.xsl, that includes collation.xml from **collation**) to transform it into html. 
 
-Next steps are:
+**minimalOverride** demonstrates how to override a schema definition from **collation**. It uses a reduced example from Levy's Hoyle work (http://booksongaming.com/hoyle/bibliography/books/whist.2.xml) where a note on the collation formula requires some markup (a superscript chi). **minimalOverride** has a schema that overrides the element **note** from **collation** so that it is a typeld that supports markup rather than a plain text field. There are corresponding XML and XSL files. 
 
-1. to separate the python code into the parts that work with **collation** and the broader parts that work only with book.xsd (**COMPLETE**)
-2. to separte the XSLT in the same way (**FIRST PASS COMPLETE** see issues)
-3. to identify other bibliograpahical components that can be extracted from book.xsd as reusable components. 
+There are also some rudimentary XProc scripts that will validate XML against a schema, run the python checking, and run the XML->HTML transformations. More work is required on these. 
+
+To use this skeleton for your own bibliographical work, fork this repository and clone it.  **bibliographicalXML** will be pulled in as a submodule. We do not want to bring others' bibliographical work into this repository which should remain a skeleton. 
