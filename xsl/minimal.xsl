@@ -3,8 +3,6 @@
 	<xsl:include href="../bibliographicalXML/xsl/collation.xsl"/>
 	<xsl:output indent="yes" method="html" omit-xml-declaration="yes"/>
 
-	<!--  	<xsl:key name="myTest" match="anomSignature" use="anomType"/>-->
-
 	<xsl:template match="/">
 		<html>
 			<head>

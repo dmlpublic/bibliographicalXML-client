@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/minimalOverride.xsl"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+  xmlns:b="https://github.com/cacology/bibliographicalXML"
+  targetNamespace="https://github.com/cacology/bibliographicalXML" elementFormDefault="qualified">
+
+  <xs:override schemaLocation="../bibliographicalXML/schemas/collation.1.0.xsd">
+    <xs:element name="note" type="b:qft" xmlns:b="https://github.com/cacology/bibliographicalXML"/>
+  </xs:override>
+
+  <xs:element name="book">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="b:collation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attribute name="rend" default="roman">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="blackletter"/>
+        <xs:enumeration value="break"/>
+        <xs:enumeration value="italic"/>
+        <xs:enumeration value="italicred"/>
+        <xs:enumeration value="italsmallcap"/>
+        <xs:enumeration value="paragraph"/>
+        <xs:enumeration value="red"/>
+        <xs:enumeration value="roman"/>
+        <xs:enumeration value="smallcap"/>
+        <xs:enumeration value="smallcapred"/>
+        <xs:enumeration value="super"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <xs:attribute name="url" type="xs:string"/>
+
+  <xs:complexType name="qft">
+    <xs:simpleContent>
+      <xs:extension base="xs:normalizedString">
+        <xs:attribute ref="b:rend" default="roman"/>
+        <xs:attribute ref="b:url" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

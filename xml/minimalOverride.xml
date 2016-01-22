@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="../xsl/minimalOverride.xsl"?>
+
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://github.com/cacology/bibliographicalXML ../schemas/minimalOveride.xsd"
+	xmlns="https://github.com/cacology/bibliographicalXML"
+	xmlns:b="https://github.com/cacology/bibliographicalXML">
+
+	<collation>
+		<format>12</format>
+		<collationFormula>
+			<gatherings>
+				<gatheringRange b:signed="true">
+					<sigStart>A</sigStart>
+					<sigEnd>H</sigEnd>
+					<leaves>6</leaves>
+				</gatheringRange>
+				<gatheringRange b:signed="true">
+					<sigStart>I</sigStart>
+					<leaves>2</leaves>
+				</gatheringRange>
+			</gatherings>
+			<signatureLeaves>$½</signatureLeaves>
+			<signingErrors>
+				<signingError>
+					<sigRef>A5</sigRef>
+					<badSig>A</badSig>
+				</signingError>
+			</signingErrors>
+		</collationFormula>
+		<totalLeaves>50</totalLeaves>
+		<pagination>
+			<pageRanges>
+				<pageRange b:numbered="false" b:range="true">
+					<start>8</start>
+				</pageRange>
+				<pageRange b:numbered="false">
+					<start>1</start>
+				</pageRange>
+				<pageRange b:numbered="true">
+					<start>2</start>
+					<end>10</end>
+				</pageRange>
+				<pageRange b:numbered="true">
+					<dupSeq>χ</dupSeq>
+					<start>5</start>
+					<end>10</end>
+				</pageRange>
+				<pageRange b:numbered="true">
+					<start>11</start>
+					<end>86</end>
+					<note>=92</note>
+				</pageRange>
+			</pageRanges>
+			<notes>
+				<note> [</note>
+				<note b:rend="super">χ</note>
+				<note>5–10 numbered with indexed *]</note>
+			</notes>
+		</pagination>
+		<totalPages>100</totalPages>
+	</collation>
+
+</book>
