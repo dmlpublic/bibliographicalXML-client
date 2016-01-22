@@ -34,7 +34,7 @@
         <p:input port="stylesheet">
             <p:document href="../xsl/minimal.xsl"/>
         </p:input>
-        <p:input port="parameters" sequence="true">
+        <p:input port="parameters">
             <p:empty/>
         </p:input>
     </p:xslt>

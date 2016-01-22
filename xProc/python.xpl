@@ -17,8 +17,8 @@
     </p:input>
 
     <p:exec command="d:\Programs\Python34\python.exe"
-        args="e:\Documents\Programming\bibXML-client\py\$check.py"
-        cwd = "e:\Documents\Programming\bibXML-client\py"
+        args="e:/documents/programming/Ascher/py/$check.py"
+        cwd = "e:/documents/programming/Ascher/py"
         source-is-xml="false"
         result-is-xml="false"
         errors-is-xml="false"
