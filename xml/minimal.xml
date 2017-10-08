@@ -8,7 +8,7 @@
         <format>8</format>
         <collationFormula>
             <gatherings>
-                <gatheringRange b:signed="true">
+                <gatheringRange signed="true">
                     <sigStart>A</sigStart>
                     <sigEnd>D</sigEnd>
                     <leaves>8</leaves>
@@ -19,7 +19,7 @@
         <totalLeaves>32</totalLeaves>
         <pagination>
             <pageRanges>
-                <pageRange b:numbered="true">
+                <pageRange numbered="true">
                     <start>1</start>
                     <end>64</end>
                 </pageRange>

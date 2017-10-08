@@ -9,12 +9,12 @@
 		<format>12</format>
 		<collationFormula>
 			<gatherings>
-				<gatheringRange b:signed="true">
+				<gatheringRange signed="true">
 					<sigStart>A</sigStart>
 					<sigEnd>H</sigEnd>
 					<leaves>6</leaves>
 				</gatheringRange>
-				<gatheringRange b:signed="true">
+				<gatheringRange signed="true">
 					<sigStart>I</sigStart>
 					<leaves>2</leaves>
 				</gatheringRange>
@@ -30,22 +30,22 @@
 		<totalLeaves>50</totalLeaves>
 		<pagination>
 			<pageRanges>
-				<pageRange b:numbered="false" b:range="true">
+				<pageRange numbered="false" range="true">
 					<start>8</start>
 				</pageRange>
-				<pageRange b:numbered="false">
+				<pageRange numbered="false">
 					<start>1</start>
 				</pageRange>
-				<pageRange b:numbered="true">
+				<pageRange numbered="true">
 					<start>2</start>
 					<end>10</end>
 				</pageRange>
-				<pageRange b:numbered="true">
+				<pageRange numbered="true">
 					<dupSeq>χ</dupSeq>
 					<start>5</start>
 					<end>10</end>
 				</pageRange>
-				<pageRange b:numbered="true">
+				<pageRange numbered="true">
 					<start>11</start>
 					<end>86</end>
 					<note>=92</note>
@@ -53,7 +53,7 @@
 			</pageRanges>
 			<notes>
 				<note> [</note>
-				<note b:rend="super">χ</note>
+				<note rend="italic">χ</note>
 				<note>5–10 numbered with indexed *]</note>
 			</notes>
 		</pagination>

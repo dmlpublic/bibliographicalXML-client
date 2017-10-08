@@ -5,36 +5,26 @@
   xmlns="https://github.com/cacology/bibliographicalXML"
   xmlns:b="https://github.com/cacology/bibliographicalXML">
 
-  <collation>
+  <collation usesU="true">
     <format>12</format>
     <collationFormula>
       <gatherings>
-        <gatheringRange b:signed="false">
+        <gatheringRange signed="false">
           <sigStart>A</sigStart>
           <leaves>2</leaves>
         </gatheringRange>
-        <gatheringRange b:signed="true">
+        <gatheringRange signed="true">
           <sigStart>B</sigStart>
           <sigEnd>U</sigEnd>
           <leaves>6</leaves>
         </gatheringRange>
-        <gatheringRange b:signed="true">
+        <gatheringRange signed="true">
           <sigStart>W</sigStart>
-          <sigEnd>W</sigEnd>
-          <leaves>6</leaves>
-        </gatheringRange>
-        <gatheringRange b:signed="true">
-          <sigStart>X</sigStart>
-          <sigEnd>Z</sigEnd>
-          <leaves>6</leaves>
-        </gatheringRange>
-        <gatheringRange b:signed="true">
-          <multSigStart>2</multSigStart>
-          <sigStart>A</sigStart>
+          <multSigEnd>2</multSigEnd>
           <sigEnd>C</sigEnd>
           <leaves>6</leaves>
         </gatheringRange>
-        <gatheringRange b:signed="true">
+        <gatheringRange signed="true">
           <multSigStart>2</multSigStart>
           <sigStart>D</sigStart>
           <leaves>4</leaves>
@@ -53,21 +43,21 @@
     <totalLeaves>162</totalLeaves>
     <pagination>
       <pageRanges>
-        <pageRange b:numbered="false">
+        <pageRange numbered="false">
           <start>i</start>
           <end>iii</end>
         </pageRange>
-        <pageRange b:numbered="true">
+        <pageRange numbered="true">
           <start>iv</start>
         </pageRange>
-        <pageRange b:numbered="false">
+        <pageRange numbered="false">
           <start>5</start>
         </pageRange>
-        <pageRange b:numbered="true">
+        <pageRange numbered="true">
           <start>6</start>
           <end>321</end>
         </pageRange>
-        <pageRange b:numbered="false">
+        <pageRange numbered="false">
           <start>322</start>
           <end>324</end>
         </pageRange>

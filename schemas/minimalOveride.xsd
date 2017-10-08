@@ -18,33 +18,35 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:attribute name="rend" default="roman">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="blackletter"/>
-        <xs:enumeration value="break"/>
-        <xs:enumeration value="italic"/>
-        <xs:enumeration value="italicred"/>
-        <xs:enumeration value="italsmallcap"/>
-        <xs:enumeration value="paragraph"/>
-        <xs:enumeration value="red"/>
-        <xs:enumeration value="roman"/>
-        <xs:enumeration value="smallcap"/>
-        <xs:enumeration value="smallcapred"/>
-        <xs:enumeration value="super"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:attribute>
-
-  <xs:attribute name="url" type="xs:string"/>
-
   <xs:complexType name="qft">
     <xs:simpleContent>
       <xs:extension base="xs:normalizedString">
-        <xs:attribute ref="b:rend" default="roman"/>
-        <xs:attribute ref="b:url" use="optional"/>
+        <xs:attributeGroup ref="b:qftAttr"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:attributeGroup name="qftAttr">
+
+    <xs:attribute name="rend" default="roman">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="blackletter"/>
+          <xs:enumeration value="break"/>
+          <xs:enumeration value="italic"/>
+          <xs:enumeration value="italicred"/>
+          <xs:enumeration value="italsmallcap"/>
+          <xs:enumeration value="paragraph"/>
+          <xs:enumeration value="red"/>
+          <xs:enumeration value="roman"/>
+          <xs:enumeration value="smallcap"/>
+          <xs:enumeration value="smallcapred"/>
+          <xs:enumeration value="super"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+
+    <xs:attribute name="url" type="xs:string"/>
+  </xs:attributeGroup>
 
 </xs:schema>
